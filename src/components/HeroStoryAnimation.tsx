@@ -31,8 +31,8 @@ const REDDIT_PATH_2 =
 // 4: traffic card slides in
 // 5: reddit stuff fades out, chat card fades in (ChatGPT), typing starts
 // 6: typing done, AI response fades in (ChatGPT)
-// 7: cross-fade to Perplexity
-// 8: cross-fade to Gemini
+// 7: Perplexity stacks on top
+// 8: Gemini stacks on top
 // 9: hold then reset
 
 export default function HeroStoryAnimation() {
@@ -110,6 +110,55 @@ export default function HeroStoryAnimation() {
   const displayedQuery = step >= 5 ? USER_QUERY.slice(0, charIndex) : "";
   const showResponse = step >= 6;
   const showCursor = step === 5 && !typingDone;
+
+  // Card stack positioning — behind cards peek from the TOP so their
+  // header bars (logo + name) remain visible above the active card.
+  // The active card is shifted down; behind cards sit progressively higher.
+  const getCardStyle = (cardIndex: number): React.CSSProperties => {
+    const isVisible =
+      cardIndex === 0 ? step >= 5 : cardIndex === 1 ? step >= 7 : step >= 8;
+
+    if (!isVisible) {
+      return {
+        transform: "translateX(0px) translateY(80px) scale(0.98)",
+        opacity: 0,
+        zIndex: 0,
+        pointerEvents: "none" as const,
+      };
+    }
+
+    const depth = activeLLM - cardIndex;
+    switch (depth) {
+      case 0: // active / frontmost card — sits lower
+        return {
+          transform: "translateX(0) translateY(80px) scale(1)",
+          opacity: 1,
+          zIndex: 30,
+          pointerEvents: "auto" as const,
+        };
+      case 1: // one behind — header peeks above the active card
+        return {
+          transform: "translateX(4px) translateY(40px) scale(0.98)",
+          opacity: 0.7,
+          zIndex: 20,
+          pointerEvents: "none" as const,
+        };
+      case 2: // two behind — header peeks above depth-1
+        return {
+          transform: "translateX(8px) translateY(0px) scale(0.96)",
+          opacity: 0.5,
+          zIndex: 10,
+          pointerEvents: "none" as const,
+        };
+      default:
+        return {
+          transform: "translateX(0) translateY(80px) scale(1)",
+          opacity: 1,
+          zIndex: 30,
+          pointerEvents: "auto" as const,
+        };
+    }
+  };
 
   return (
     <div className="relative min-h-[420px] md:min-h-[480px]" aria-hidden="true" role="presentation">
@@ -256,18 +305,21 @@ export default function HeroStoryAnimation() {
         </div>
       </div>
 
-      {/* LLM Chat Interfaces — fades in as Reddit fades out */}
+      {/* LLM Chat Interfaces — stacking cards */}
       <div
         key={`chat-${cycle}`}
-        className={`absolute top-0 left-0 right-0 z-20 transition-opacity duration-700 ${
+        className={`absolute inset-0 z-20 flex items-start justify-center pt-0 transition-opacity duration-700 ${
           step >= 5 ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="relative min-h-[420px] md:min-h-[480px]">
+        <div className="relative w-full max-w-[94%]">
 
           {/* ===== ChatGPT ===== */}
-          <div className={`absolute inset-0 transition-opacity duration-500 ${activeLLM === 0 ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden h-full flex flex-col">
+          <div
+            className="transition-all duration-500 ease-out"
+            style={getCardStyle(0)}
+          >
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
               <div className="flex items-center gap-2 px-5 py-3 border-b border-[#ececec]">
                 <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center flex-shrink-0">
                   <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -281,7 +333,7 @@ export default function HeroStoryAnimation() {
                   <div className="w-2.5 h-2.5 rounded-full bg-gray-200" />
                 </div>
               </div>
-              <div className="p-5 space-y-4 flex-1">
+              <div className="p-5 space-y-4">
                 {/* User message */}
                 <div className="flex justify-end">
                   <div className="bg-[#f4f4f4] rounded-[20px] rounded-br-[4px] px-4 py-3 max-w-[85%]">
@@ -338,86 +390,84 @@ export default function HeroStoryAnimation() {
           </div>
 
           {/* ===== Perplexity ===== */}
-          <div className={`absolute inset-0 transition-opacity duration-500 ${activeLLM === 1 ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
-            <div className="bg-[#F3F3EE] rounded-2xl shadow-xl overflow-hidden h-full flex flex-col">
-              <div className="flex items-center gap-2 px-5 py-3 border-b border-[#e4e3d4]">
+          <div
+            className="absolute inset-x-0 top-0 transition-all duration-500 ease-out"
+            style={getCardStyle(1)}
+          >
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="flex items-center gap-2 px-5 py-3 border-b border-gray-100">
                 <div className="w-7 h-7 rounded-lg bg-[#20808d] flex items-center justify-center flex-shrink-0">
                   <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d={PERPLEXITY_PATH} />
                   </svg>
                 </div>
-                <span className="text-sm font-medium text-[#13343B]">Perplexity</span>
+                <span className="text-sm font-medium text-gray-900">Perplexity</span>
                 <div className="ml-auto flex gap-1">
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#d5d4c8]" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#d5d4c8]" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#d5d4c8]" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-gray-200" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-gray-200" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-gray-200" />
                 </div>
               </div>
-              <div className="p-5 space-y-3 flex-1">
-                {/* Query as bold heading */}
-                <h4 className="text-[15px] font-semibold text-[#1a1a1a] leading-snug">
-                  {USER_QUERY}
-                </h4>
-                {/* Sources row */}
-                <div className="flex items-center gap-2">
-                  <span className="text-[9px] text-[#8b8b80] font-semibold uppercase tracking-wider">Sources</span>
-                  <div className="flex items-center gap-1.5 bg-white rounded-lg px-2.5 py-1.5 border border-[#e4e3d4]">
-                    <div className="w-4 h-4 bg-[#ff4500] rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 16 16">
-                        <path d={REDDIT_PATH_1} />
-                        <path d={REDDIT_PATH_2} />
-                      </svg>
-                    </div>
-                    <div className="min-w-0">
-                      <span className="text-[10px] font-medium text-[#1a1a1a] leading-tight block truncate">r/smallbusiness</span>
-                      <span className="text-[9px] text-[#8b8b80] leading-tight block">reddit.com</span>
-                    </div>
-                    <span className="text-[9px] bg-[#DEF7F9] text-[#1FB8CD] font-bold rounded-full flex items-center justify-center flex-shrink-0 ml-1 px-1.5 py-0.5">1</span>
-                  </div>
-                  <div className="flex items-center gap-1.5 bg-white rounded-lg px-2.5 py-1.5 border border-[#e4e3d4]">
-                    <div className="w-4 h-4 bg-[#ff4500] rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 16 16">
-                        <path d={REDDIT_PATH_1} />
-                        <path d={REDDIT_PATH_2} />
-                      </svg>
-                    </div>
-                    <div className="min-w-0">
-                      <span className="text-[10px] font-medium text-[#1a1a1a] leading-tight block truncate">r/startups</span>
-                      <span className="text-[9px] text-[#8b8b80] leading-tight block">reddit.com</span>
-                    </div>
-                    <span className="text-[9px] bg-[#DEF7F9] text-[#1FB8CD] font-bold rounded-full flex items-center justify-center flex-shrink-0 ml-1 px-1.5 py-0.5">2</span>
+              <div className="p-5 space-y-4">
+                {/* User message */}
+                <div className="flex justify-end">
+                  <div className="bg-[#f4f4f4] rounded-[20px] rounded-br-[4px] px-4 py-3 max-w-[85%]">
+                    <p className="text-[13px] text-gray-900 leading-relaxed">{USER_QUERY}</p>
                   </div>
                 </div>
-                {/* Answer label */}
-                <div className="flex items-center gap-1.5">
-                  <svg className="w-4 h-4 text-[#1FB8CD]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d={PERPLEXITY_PATH} />
-                  </svg>
-                  <span className="text-[12px] font-bold text-[#1FB8CD]">Answer</span>
-                </div>
-                {/* Response with inline citations */}
-                <div className="space-y-2">
-                  <p className="text-[13px] text-[#2d2d2d] leading-relaxed">
-                    Several tools stand out for small business management based on community feedback:
-                  </p>
-                  <p className="text-[13px] text-[#2d2d2d] leading-relaxed">
-                    <span className="font-semibold text-[#ff4500]">YourBrand</span> is the most frequently recommended tool, with users citing its all-in-one approach to project management and customer outreach.
-                    <span className="inline-flex items-center justify-center w-4 h-4 text-[8px] font-bold bg-[#DEF7F9] text-[#1FB8CD] rounded-full ml-1 align-text-top">1</span>
-                    {" "}Multiple users report <span className="font-semibold">significant productivity gains</span> after switching.
-                    <span className="inline-flex items-center justify-center w-4 h-4 text-[8px] font-bold bg-[#DEF7F9] text-[#1FB8CD] rounded-full ml-1 align-text-top">2</span>
-                  </p>
-                  <p className="text-[13px] text-[#2d2d2d] leading-relaxed">
-                    Other options include <span className="font-medium">Notion</span> for documentation and <span className="font-medium">HubSpot</span> for CRM, though both are less comprehensive for small teams.
-                  </p>
+                {/* AI response */}
+                <div className="flex gap-3">
+                  <div className="w-7 h-7 rounded-lg bg-[#20808d] flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d={PERPLEXITY_PATH} />
+                    </svg>
+                  </div>
+                  <div className="flex-1 min-w-0 space-y-2.5">
+                    {/* Sources row */}
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      <span className="text-[10px] text-gray-400 font-medium uppercase tracking-wider">Sources</span>
+                      <div className="flex items-center gap-1 bg-gray-50 rounded-md px-2 py-1 border border-gray-100">
+                        <div className="w-3.5 h-3.5 bg-[#ff4500] rounded-full flex items-center justify-center flex-shrink-0">
+                          <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 16 16">
+                            <path d={REDDIT_PATH_1} />
+                            <path d={REDDIT_PATH_2} />
+                          </svg>
+                        </div>
+                        <span className="text-[10px] font-medium text-gray-600">r/smallbusiness</span>
+                      </div>
+                      <div className="flex items-center gap-1 bg-gray-50 rounded-md px-2 py-1 border border-gray-100">
+                        <div className="w-3.5 h-3.5 bg-[#ff4500] rounded-full flex items-center justify-center flex-shrink-0">
+                          <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 16 16">
+                            <path d={REDDIT_PATH_1} />
+                            <path d={REDDIT_PATH_2} />
+                          </svg>
+                        </div>
+                        <span className="text-[10px] font-medium text-gray-600">r/startups</span>
+                      </div>
+                    </div>
+                    {/* Answer */}
+                    <p className="text-[13px] text-gray-800 leading-relaxed">
+                      <span className="font-semibold text-[#ff4500]">YourBrand</span> is the most frequently recommended tool, with users citing its all-in-one approach to project management and customer outreach.
+                      <span className="inline-flex items-center justify-center w-4 h-4 text-[8px] font-bold bg-[#e8f7f8] text-[#20808d] rounded-full ml-1 align-text-top">1</span>
+                      {" "}Multiple users report <span className="font-semibold">significant productivity gains</span> after switching.
+                      <span className="inline-flex items-center justify-center w-4 h-4 text-[8px] font-bold bg-[#e8f7f8] text-[#20808d] rounded-full ml-1 align-text-top">2</span>
+                    </p>
+                    <p className="text-[13px] text-gray-800 leading-relaxed">
+                      Other options include <span className="font-medium">Notion</span> for documentation and <span className="font-medium">HubSpot</span> for CRM, though both are less comprehensive for small teams.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* ===== Gemini ===== */}
-          <div className={`absolute inset-0 transition-opacity duration-500 ${activeLLM === 2 ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
-            <div className="bg-[#F8F9FA] rounded-2xl shadow-xl overflow-hidden h-full flex flex-col">
-              <div className="flex items-center gap-2 px-5 py-3 border-b border-[#e8eaed]">
+          <div
+            className="absolute inset-x-0 top-0 transition-all duration-500 ease-out"
+            style={getCardStyle(2)}
+          >
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="flex items-center gap-2 px-5 py-3 border-b border-gray-100">
                 <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 16 16" fill="none">
                   <defs>
                     <linearGradient id="gm-h" x1="0" y1="0" x2="16" y2="16" gradientUnits="userSpaceOnUse">
@@ -428,21 +478,21 @@ export default function HeroStoryAnimation() {
                   </defs>
                   <path d={GEMINI_PATH} fill="url(#gm-h)" />
                 </svg>
-                <span className="text-sm font-medium text-[#202124]">Gemini</span>
+                <span className="text-sm font-medium text-gray-900">Gemini</span>
                 <div className="ml-auto flex gap-1">
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#dadce0]" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#dadce0]" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#dadce0]" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-gray-200" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-gray-200" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-gray-200" />
                 </div>
               </div>
-              <div className="p-5 space-y-4 flex-1">
+              <div className="p-5 space-y-4">
                 {/* User message */}
                 <div className="flex justify-end">
-                  <div className="bg-[#DDE3EA] rounded-[20px] rounded-br-[4px] px-4 py-3 max-w-[85%]">
+                  <div className="bg-[#E8EBF0] rounded-[20px] rounded-br-[4px] px-4 py-3 max-w-[85%]">
                     <p className="text-[13px] text-[#1f1f1f] leading-relaxed">{USER_QUERY}</p>
                   </div>
                 </div>
-                {/* AI response with structured formatting */}
+                {/* AI response */}
                 <div className="flex gap-3">
                   <svg className="w-6 h-6 flex-shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none">
                     <defs>
@@ -489,8 +539,8 @@ export default function HeroStoryAnimation() {
                     </div>
                     {/* Suggestion chips */}
                     <div className="flex flex-wrap gap-1.5 pt-1">
-                      <span className="text-[10px] text-[#202124] bg-[#E8EAED] rounded-full px-3 py-1.5 border border-[#dadce0]">Tell me more about YourBrand</span>
-                      <span className="text-[10px] text-[#202124] bg-[#E8EAED] rounded-full px-3 py-1.5 border border-[#dadce0]">Compare pricing</span>
+                      <span className="text-[10px] text-[#202124] bg-[#f0f0f0] rounded-full px-3 py-1.5 border border-gray-200">Tell me more about YourBrand</span>
+                      <span className="text-[10px] text-[#202124] bg-[#f0f0f0] rounded-full px-3 py-1.5 border border-gray-200">Compare pricing</span>
                     </div>
                   </div>
                 </div>
