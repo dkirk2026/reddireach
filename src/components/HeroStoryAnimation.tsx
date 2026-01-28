@@ -4,34 +4,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 
 const USER_QUERY = "Best tools for managing a small business in 2026";
 
-const llmStyles = [
-  {
-    name: "ChatGPT",
-    nameColor: "#1a1a1a",
-    cardBg: "#ffffff",
-    userBubbleBg: "#f4f4f4",
-    headerIconBg: "#000000",
-    accentColor: "#10a37f",
-  },
-  {
-    name: "Perplexity",
-    nameColor: "#1FB8CD",
-    cardBg: "#FBFAF4",
-    userBubbleBg: "#eeede7",
-    headerIconBg: "#20808d",
-    accentColor: "#1FB8CD",
-  },
-  {
-    name: "Gemini",
-    nameColor: "#4285F4",
-    cardBg: "#f8faff",
-    userBubbleBg: "#E9EEF6",
-    headerIconBg: "",
-    accentColor: "#4285F4",
-  },
-];
-
-// OpenAI SVG path (reused in header + response avatar)
+// OpenAI SVG path
 const OPENAI_PATH =
   "M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855l-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08L8.704 5.46a.795.795 0 0 0-.393.681zm1.097-2.365l2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z";
 
@@ -56,8 +29,8 @@ const REDDIT_PATH_2 =
 // 3: traffic card
 // 4: chat card appears (ChatGPT), user query starts typing
 // 5: typing done, AI response fades in (ChatGPT)
-// 6: logo swap to Perplexity
-// 7: logo swap to Gemini
+// 6: cross-fade to Perplexity
+// 7: cross-fade to Gemini
 // 8: hold then reset
 
 export default function HeroStoryAnimation() {
@@ -67,7 +40,6 @@ export default function HeroStoryAnimation() {
   const [typingDone, setTypingDone] = useState(false);
   const typingRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Which LLM is active (0=ChatGPT, 1=Perplexity, 2=Gemini)
   const activeLLM =
     step <= 5 ? 0 : step === 6 ? 1 : step >= 7 ? 2 : 0;
 
@@ -77,21 +49,19 @@ export default function HeroStoryAnimation() {
       case 1: return 1400;
       case 2: return 1400;
       case 3: return 1200;
-      case 4: return 0;    // typing handles its own timing
-      case 5: return 2500; // read the AI response
-      case 6: return 2500; // read Perplexity
-      case 7: return 2500; // read Gemini
-      case 8: return 2000; // hold before reset
+      case 4: return 0;
+      case 5: return 2500;
+      case 6: return 2500;
+      case 7: return 2500;
+      case 8: return 2000;
       default: return 1000;
     }
   }, []);
 
-  // Typewriter effect for step 4
   useEffect(() => {
     if (step === 4) {
       setCharIndex(0);
       setTypingDone(false);
-
       typingRef.current = setInterval(() => {
         setCharIndex((prev) => {
           if (prev >= USER_QUERY.length) {
@@ -102,14 +72,12 @@ export default function HeroStoryAnimation() {
           return prev + 1;
         });
       }, 45);
-
       return () => {
         if (typingRef.current) clearInterval(typingRef.current);
       };
     }
   }, [step]);
 
-  // When typing finishes, advance to step 5
   useEffect(() => {
     if (typingDone && step === 4) {
       const timer = setTimeout(() => setStep(5), 600);
@@ -117,10 +85,8 @@ export default function HeroStoryAnimation() {
     }
   }, [typingDone, step]);
 
-  // Step progression (skips step 4 which is handled by typing)
   useEffect(() => {
-    if (step === 4) return; // typing handles this
-
+    if (step === 4) return;
     const delay = getDelay(step);
     const timer = setTimeout(() => {
       if (step < 8) {
@@ -132,11 +98,12 @@ export default function HeroStoryAnimation() {
         setCycle((prev) => prev + 1);
       }
     }, delay);
-
     return () => clearTimeout(timer);
   }, [step, getDelay]);
 
-  const currentLLM = llmStyles[activeLLM];
+  const displayedQuery = step >= 4 ? USER_QUERY.slice(0, charIndex) : "";
+  const showResponse = step >= 5;
+  const showCursor = step === 4 && !typingDone;
 
   return (
     <div className="relative min-h-[400px] md:min-h-[500px]" aria-hidden="true" role="presentation">
@@ -229,10 +196,7 @@ export default function HeroStoryAnimation() {
                 <div
                   key={i}
                   className="w-[5px] rounded-full bg-green-400"
-                  style={{
-                    height: `${h * 3}px`,
-                    opacity: 0.5 + i * 0.12,
-                  }}
+                  style={{ height: `${h * 3}px`, opacity: 0.5 + i * 0.12 }}
                 />
               ))}
             </div>
@@ -244,150 +208,198 @@ export default function HeroStoryAnimation() {
         </div>
       </div>
 
-      {/* Steps 4-8: LLM Chat Interface */}
+      {/* Steps 4-8: LLM Chat Interface — three platform-accurate cards that cross-fade */}
       <div
         key={`chat-${cycle}`}
         className={`absolute bottom-0 left-1 right-1 md:left-2 md:right-2 z-10 ${
           step >= 4 ? "animate-story-fade-in-up" : "story-hidden"
         }`}
       >
-        <div
-          className="rounded-2xl shadow-xl overflow-hidden transition-colors duration-500"
-          style={{ backgroundColor: currentLLM.cardBg }}
-        >
-          {/* Chat header — adapts per LLM */}
-          <div className="flex items-center gap-2.5 px-4 py-2.5 border-b border-gray-100 transition-colors duration-500">
-            <div
-              className="w-7 h-7 rounded-lg flex items-center justify-center transition-all duration-500"
-              style={{
-                background:
-                  activeLLM === 2
-                    ? "linear-gradient(135deg, #4285F4, #9B72CB, #D96570)"
-                    : currentLLM.headerIconBg,
-              }}
-            >
-              {activeLLM === 0 && (
-                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d={OPENAI_PATH} />
-                </svg>
-              )}
-              {activeLLM === 1 && (
-                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d={PERPLEXITY_PATH} />
-                </svg>
-              )}
-              {activeLLM === 2 && (
-                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 16 16">
-                  <path d={GEMINI_PATH} />
-                </svg>
-              )}
-            </div>
-            <span
-              className="text-xs font-semibold transition-colors duration-500"
-              style={{ color: currentLLM.nameColor }}
-            >
-              {currentLLM.name}
-            </span>
-            <div className="ml-auto flex gap-1">
-              <div className="w-2 h-2 rounded-full bg-gray-200" />
-              <div className="w-2 h-2 rounded-full bg-gray-200" />
-              <div className="w-2 h-2 rounded-full bg-gray-200" />
+        <div className="relative min-h-[248px] md:min-h-[260px]">
+
+          {/* ===== ChatGPT — white bg, gray pill bubble, black circle avatar ===== */}
+          <div className={`absolute inset-0 transition-opacity duration-500 ${activeLLM === 0 ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden h-full flex flex-col">
+              <div className="flex items-center gap-2 px-4 py-2.5 border-b border-[#ececec]">
+                <div className="w-6 h-6 rounded-full bg-black flex items-center justify-center flex-shrink-0">
+                  <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d={OPENAI_PATH} />
+                  </svg>
+                </div>
+                <span className="text-xs font-medium text-[#0d0d0d]">ChatGPT</span>
+                <div className="ml-auto flex gap-1">
+                  <div className="w-2 h-2 rounded-full bg-gray-200" />
+                  <div className="w-2 h-2 rounded-full bg-gray-200" />
+                  <div className="w-2 h-2 rounded-full bg-gray-200" />
+                </div>
+              </div>
+              <div className="p-4 space-y-3 flex-1">
+                {/* User message: right-aligned gray pill, bottom-right corner tighter */}
+                <div className="flex justify-end">
+                  <div className="bg-[#f4f4f4] rounded-[20px] rounded-br-[4px] px-3.5 py-2.5 max-w-[85%]">
+                    <p className="text-xs text-[#0d0d0d] leading-relaxed">
+                      {displayedQuery}
+                      {showCursor && (
+                        <span className="inline-block w-[2px] h-3.5 bg-[#0d0d0d] ml-0.5 align-middle animate-cursor-blink" />
+                      )}
+                    </p>
+                  </div>
+                </div>
+                {/* AI response: no bubble, black circle avatar, plain text on white */}
+                <div className={`transition-all duration-500 ${showResponse ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}>
+                  <div className="flex gap-2.5">
+                    <div className="w-6 h-6 rounded-full bg-black flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d={OPENAI_PATH} />
+                      </svg>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs text-[#0d0d0d] leading-relaxed">
+                        Based on Reddit discussions, I&apos;d recommend{" "}
+                        <span className="font-semibold text-[#ff4500]">YourBrand</span> —
+                        users on r/smallbusiness report significant productivity gains
+                        and excellent customer support.
+                      </p>
+                      <div className="flex items-center gap-1.5 mt-2">
+                        <div className="w-3.5 h-3.5 bg-[#ff4500] rounded-full flex items-center justify-center flex-shrink-0">
+                          <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 16 16">
+                            <path d={REDDIT_PATH_1} />
+                            <path d={REDDIT_PATH_2} />
+                          </svg>
+                        </div>
+                        <span className="text-[10px] text-[#6e6e73]">r/smallbusiness</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="p-4 space-y-3">
-            {/* User message — bubble style adapts per LLM */}
-            <div className="flex justify-end">
-              <div
-                className="rounded-2xl rounded-tr-sm px-3.5 py-2.5 max-w-[85%] transition-colors duration-500"
-                style={{ backgroundColor: currentLLM.userBubbleBg }}
-              >
-                <p className="text-xs text-gray-800 leading-relaxed">
-                  {step >= 4 ? USER_QUERY.slice(0, charIndex) : ""}
-                  {step === 4 && !typingDone && (
-                    <span className="inline-block w-[2px] h-3.5 bg-gray-800 ml-0.5 align-middle animate-cursor-blink" />
-                  )}
-                </p>
-              </div>
-            </div>
-
-            {/* Perplexity: "Answer" label + source pill */}
-            {activeLLM === 1 && (
-              <div
-                className={`flex items-center gap-2 transition-all duration-300 ${
-                  step >= 5 ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                <span className="text-[11px] font-bold text-[#1FB8CD]">Answer</span>
-                <div className="flex items-center gap-1 bg-[#eeede7] rounded-full px-2 py-0.5">
-                  <div className="w-3.5 h-3.5 bg-[#ff4500] rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 16 16">
-                      <path d={REDDIT_PATH_1} />
-                      <path d={REDDIT_PATH_2} />
-                    </svg>
-                  </div>
-                  <span className="text-[9px] text-gray-500 font-medium">r/smallbusiness</span>
+          {/* ===== Perplexity — paper bg, query as heading, sources row, Answer label, teal citations ===== */}
+          <div className={`absolute inset-0 transition-opacity duration-500 ${activeLLM === 1 ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
+            <div className="bg-[#F3F3EE] rounded-2xl shadow-xl overflow-hidden h-full flex flex-col">
+              <div className="flex items-center gap-2 px-4 py-2.5 border-b border-[#e4e3d4]">
+                <div className="w-6 h-6 rounded-lg bg-[#20808d] flex items-center justify-center flex-shrink-0">
+                  <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d={PERPLEXITY_PATH} />
+                  </svg>
+                </div>
+                <span className="text-xs font-medium text-[#13343B]">Perplexity</span>
+                <div className="ml-auto flex gap-1">
+                  <div className="w-2 h-2 rounded-full bg-[#d5d4c8]" />
+                  <div className="w-2 h-2 rounded-full bg-[#d5d4c8]" />
+                  <div className="w-2 h-2 rounded-full bg-[#d5d4c8]" />
                 </div>
               </div>
-            )}
-
-            {/* AI response — fades in after typing */}
-            <div
-              className={`transition-all duration-500 ${
-                step >= 5 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-              }`}
-            >
-              <div className="flex gap-2.5">
-                {/* ChatGPT avatar: black circle, white OpenAI logo */}
-                {activeLLM === 0 && (
-                  <div className="w-5 h-5 rounded-full bg-black flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d={OPENAI_PATH} />
-                    </svg>
-                  </div>
-                )}
-                {/* Gemini avatar: gradient sparkle */}
-                {activeLLM === 2 && (
-                  <div
-                    className="w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5"
-                    style={{ background: "linear-gradient(135deg, #4285F4, #9B72CB, #D96570)" }}
-                  >
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 16 16">
-                      <path d={GEMINI_PATH} />
-                    </svg>
-                  </div>
-                )}
-
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs text-gray-700 leading-relaxed">
-                    Based on Reddit discussions, I&apos;d recommend{" "}
-                    <span className="font-semibold text-[#ff4500]">YourBrand</span> —
-                    users on r/smallbusiness report significant productivity gains
-                    and excellent customer support.
-                    {activeLLM === 1 && (
-                      <sup className="text-[9px] font-bold ml-0.5 text-[#1FB8CD]">[1]</sup>
-                    )}
-                  </p>
-
-                  {/* Source citation with Reddit icon */}
-                  <div className="flex items-center gap-1.5 mt-1.5 ml-0.5">
+              <div className="p-4 space-y-2.5 flex-1">
+                {/* Query as bold heading — no bubble */}
+                <h4 className="text-[13px] font-semibold text-[#1a1a1a] leading-snug">
+                  {USER_QUERY}
+                </h4>
+                {/* Sources row with source card */}
+                <div className="flex items-start gap-1.5">
+                  <span className="text-[8px] text-[#8b8b80] font-semibold uppercase tracking-wider mt-1.5">Sources</span>
+                  <div className="flex items-center gap-1.5 bg-white rounded-lg px-2 py-1.5 border border-[#e4e3d4]">
                     <div className="w-3.5 h-3.5 bg-[#ff4500] rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 16 16">
+                      <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 16 16">
                         <path d={REDDIT_PATH_1} />
                         <path d={REDDIT_PATH_2} />
                       </svg>
                     </div>
-                    <span
-                      className="text-[10px] font-medium transition-colors duration-500"
-                      style={{ color: currentLLM.accentColor }}
-                    >
-                      r/smallbusiness
-                    </span>
+                    <div className="min-w-0">
+                      <span className="text-[9px] font-medium text-[#1a1a1a] leading-tight block truncate">Best tools for small business</span>
+                      <span className="text-[8px] text-[#8b8b80] leading-tight block">reddit.com</span>
+                    </div>
+                    <span className="text-[8px] bg-[#DEF7F9] text-[#1FB8CD] font-bold rounded-full w-4 h-4 flex items-center justify-center flex-shrink-0 ml-0.5">1</span>
+                  </div>
+                </div>
+                {/* Answer label with Perplexity icon */}
+                <div className="flex items-center gap-1.5">
+                  <svg className="w-3.5 h-3.5 text-[#1FB8CD]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d={PERPLEXITY_PATH} />
+                  </svg>
+                  <span className="text-[11px] font-bold text-[#1FB8CD]">Answer</span>
+                </div>
+                {/* Response: no avatar, inline [1] citation */}
+                <p className="text-xs text-[#2d2d2d] leading-relaxed">
+                  Based on Reddit discussions, I&apos;d recommend{" "}
+                  <span className="font-semibold text-[#ff4500]">YourBrand</span> —
+                  users on r/smallbusiness report significant productivity gains
+                  and excellent customer support.
+                  <span className="inline-flex items-center justify-center w-4 h-4 text-[8px] font-bold bg-[#DEF7F9] text-[#1FB8CD] rounded-full ml-1 align-text-top">1</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* ===== Gemini — cool off-white bg, blue-gray bubble, gradient sparkle, suggestion chips ===== */}
+          <div className={`absolute inset-0 transition-opacity duration-500 ${activeLLM === 2 ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
+            <div className="bg-[#F8F9FA] rounded-2xl shadow-xl overflow-hidden h-full flex flex-col">
+              <div className="flex items-center gap-2 px-4 py-2.5 border-b border-[#e8eaed]">
+                <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 16 16" fill="none">
+                  <defs>
+                    <linearGradient id="gm-h" x1="0" y1="0" x2="16" y2="16" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#4285F4" />
+                      <stop offset="50%" stopColor="#9B72CB" />
+                      <stop offset="100%" stopColor="#D96570" />
+                    </linearGradient>
+                  </defs>
+                  <path d={GEMINI_PATH} fill="url(#gm-h)" />
+                </svg>
+                <span className="text-xs font-medium text-[#202124]">Gemini</span>
+                <div className="ml-auto flex gap-1">
+                  <div className="w-2 h-2 rounded-full bg-[#dadce0]" />
+                  <div className="w-2 h-2 rounded-full bg-[#dadce0]" />
+                  <div className="w-2 h-2 rounded-full bg-[#dadce0]" />
+                </div>
+              </div>
+              <div className="p-4 space-y-3 flex-1">
+                {/* User message: right-aligned blue-gray pill */}
+                <div className="flex justify-end">
+                  <div className="bg-[#DDE3EA] rounded-[20px] rounded-br-[4px] px-3.5 py-2.5 max-w-[85%]">
+                    <p className="text-xs text-[#1f1f1f] leading-relaxed">{USER_QUERY}</p>
+                  </div>
+                </div>
+                {/* AI response: gradient sparkle avatar, no bubble */}
+                <div className="flex gap-2.5">
+                  <svg className="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none">
+                    <defs>
+                      <linearGradient id="gm-r" x1="0" y1="0" x2="16" y2="16" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stopColor="#4285F4" />
+                        <stop offset="50%" stopColor="#9B72CB" />
+                        <stop offset="100%" stopColor="#D96570" />
+                      </linearGradient>
+                    </defs>
+                    <path d={GEMINI_PATH} fill="url(#gm-r)" />
+                  </svg>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs text-[#202124] leading-relaxed">
+                      Based on Reddit discussions, I&apos;d recommend{" "}
+                      <span className="font-semibold text-[#ff4500]">YourBrand</span> —
+                      users on r/smallbusiness report significant productivity gains
+                      and excellent customer support.
+                    </p>
+                    <div className="flex items-center gap-1.5 mt-2">
+                      <div className="w-3.5 h-3.5 bg-[#ff4500] rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 16 16">
+                          <path d={REDDIT_PATH_1} />
+                          <path d={REDDIT_PATH_2} />
+                        </svg>
+                      </div>
+                      <span className="text-[10px] text-[#5f6368]">r/smallbusiness</span>
+                    </div>
+                    {/* Suggestion chips */}
+                    <div className="flex gap-1.5 mt-2.5">
+                      <span className="text-[9px] text-[#202124] bg-[#E8EAED] rounded-full px-2.5 py-1 border border-[#dadce0]">Tell me more</span>
+                      <span className="text-[9px] text-[#202124] bg-[#E8EAED] rounded-full px-2.5 py-1 border border-[#dadce0]">Compare options</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
