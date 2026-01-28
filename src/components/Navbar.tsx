@@ -21,22 +21,22 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link href="#features" className="text-gray-600 hover:text-[#ff4500] transition-colors">
-              Features
+              Who We Are
             </Link>
             <Link href="#how-it-works" className="text-gray-600 hover:text-[#ff4500] transition-colors">
-              How It Works
-            </Link>
-            <Link href="#pricing" className="text-gray-600 hover:text-[#ff4500] transition-colors">
-              Pricing
+              Our Approach
             </Link>
             <Link href="#testimonials" className="text-gray-600 hover:text-[#ff4500] transition-colors">
               Testimonials
+            </Link>
+            <Link href="#faq" className="text-gray-600 hover:text-[#ff4500] transition-colors">
+              FAQ
             </Link>
             <Link
               href="#contact"
               className="bg-[#ff4500] hover:bg-[#cc3700] text-white px-6 py-2 rounded-full font-medium transition-colors"
             >
-              Get Started
+              Let&apos;s Chat
             </Link>
           </div>
 
@@ -60,22 +60,22 @@ export default function Navbar() {
           <div className="md:hidden py-4 border-t">
             <div className="flex flex-col space-y-4">
               <Link href="#features" className="text-gray-600 hover:text-[#ff4500] transition-colors">
-                Features
+                Who We Are
               </Link>
               <Link href="#how-it-works" className="text-gray-600 hover:text-[#ff4500] transition-colors">
-                How It Works
-              </Link>
-              <Link href="#pricing" className="text-gray-600 hover:text-[#ff4500] transition-colors">
-                Pricing
+                Our Approach
               </Link>
               <Link href="#testimonials" className="text-gray-600 hover:text-[#ff4500] transition-colors">
                 Testimonials
+              </Link>
+              <Link href="#faq" className="text-gray-600 hover:text-[#ff4500] transition-colors">
+                FAQ
               </Link>
               <Link
                 href="#contact"
                 className="bg-[#ff4500] hover:bg-[#cc3700] text-white px-6 py-2 rounded-full font-medium transition-colors text-center"
               >
-                Get Started
+                Let&apos;s Chat
               </Link>
             </div>
           </div>

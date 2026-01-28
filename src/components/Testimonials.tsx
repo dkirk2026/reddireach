@@ -1,36 +1,36 @@
 const testimonials = [
   {
-    quote: "ReddiReach transformed our Reddit presence. We went from zero to 50k monthly visitors from Reddit alone. Their authentic approach really works.",
+    quote: "ReddiReach got our brand mentioned across key subreddits. Within weeks, ChatGPT started recommending us. Game changer.",
     author: "Sarah Chen",
     role: "Founder, TechStartup.io",
     avatar: "SC"
   },
   {
-    quote: "The team understands Reddit culture better than anyone. They helped us launch successfully on r/startups and got our product in front of exactly the right audience.",
+    quote: "Their GEO strategy is brilliant. Our competitors had no idea why AI was suddenly recommending us over them. ReddiReach does.",
     author: "Michael Torres",
     role: "CEO, SaaSMetrics",
     avatar: "MT"
   },
   {
-    quote: "I was skeptical about Reddit marketing, but ReddiReach proved me wrong. Our conversion rate from Reddit traffic is 3x higher than other channels.",
+    quote: "We saw a 340% increase in organic traffic after ReddiReach optimized our Reddit presence for AI search. The ROI is unmatched.",
     author: "Emily Watson",
     role: "Marketing Director, DevTools Co",
     avatar: "EW"
   },
   {
-    quote: "Professional, transparent, and incredibly effective. They don't just post content—they build genuine community relationships that last.",
+    quote: "Professional, authentic, and they actually understand how AI search works. Not just posting on Reddit—they're engineering brand visibility.",
     author: "David Park",
     role: "Founder, CloudSync",
     avatar: "DP"
   },
   {
-    quote: "The analytics and insights they provide are invaluable. We now understand exactly what resonates with our Reddit audience.",
+    quote: "Perplexity and ChatGPT now recommend our platform by name. That started after ReddiReach's Reddit campaign. The data speaks for itself.",
     author: "Jessica Liu",
     role: "Growth Lead, FinanceApp",
     avatar: "JL"
   },
   {
-    quote: "Best investment we made in 2024. Reddit is now our #1 source of qualified leads, all thanks to ReddiReach's strategy.",
+    quote: "The team combines Reddit marketing expertise with deep AI search knowledge. We're now the #1 recommended tool in our category on AI platforms.",
     author: "Alex Morrison",
     role: "Co-founder, MarketingPro",
     avatar: "AM"
@@ -48,7 +48,7 @@ export default function Testimonials() {
             Loved by Startups & Businesses
           </h2>
           <p className="text-lg text-gray-600">
-            See what our clients have to say about their Reddit marketing results.
+            See what our clients have to say about their Reddit marketing and AI search results.
           </p>
         </div>
 
@@ -85,13 +85,22 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Logos section */}
+        {/* Partner Platforms */}
         <div className="mt-16 text-center">
-          <p className="text-gray-500 mb-8">Trusted by innovative companies worldwide</p>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-50">
-            {["TechCrunch", "ProductHunt", "Y Combinator", "Indie Hackers", "Hacker News"].map((company, index) => (
-              <div key={index} className="text-xl font-bold text-gray-400">
-                {company}
+          <p className="text-gray-500 mb-8 font-medium">Our Partner Platforms</p>
+          <div className="flex flex-wrap justify-center items-center gap-10">
+            {[
+              { name: "ChatGPT", icon: "M" },
+              { name: "Perplexity", icon: "P" },
+              { name: "Google AI", icon: "G" },
+              { name: "Reddit", icon: "R" },
+              { name: "Claude", icon: "C" }
+            ].map((platform, index) => (
+              <div key={index} className="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+                <div className="w-8 h-8 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 font-bold text-sm">
+                  {platform.icon}
+                </div>
+                <span className="text-lg font-semibold text-gray-400">{platform.name}</span>
               </div>
             ))}
           </div>

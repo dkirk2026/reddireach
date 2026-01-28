@@ -4,28 +4,28 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "What makes ReddiReach different from other marketing agencies?",
-    answer: "We specialize exclusively in Reddit marketing. Our team consists of experienced Redditors who understand the platform's unique culture, rules, and community dynamics. We focus on organic, authentic engagement rather than spammy tactics that get you banned."
+    question: "Is marketing on Reddit worth it?",
+    answer: "Yes. Marketing on Reddit can be highly effective due to its vast, engaged user base and niche communities, especially due to Reddit being cited as a top source of AI search training data. By participating authentically in relevant subreddits, businesses can connect directly with their target audience, fostering trust and engagement. However, it's crucial to approach Reddit marketing with authenticity and respect for community norms to avoid negative backlash."
   },
   {
-    question: "Is Reddit marketing really effective for businesses?",
-    answer: "Absolutely. Reddit has over 50 million daily active users who are highly engaged and often in a research/buying mindset. Reddit traffic typically converts 2-3x better than social media traffic because users are actively seeking solutions and recommendations."
+    question: "What is Your Pricing?",
+    answer: "Our pricing varies based on the scope of your campaign, the number of subreddits targeted, and the level of GEO optimization needed. We offer customized plans for startups and small businesses. Contact us for a free consultation and personalized quote."
+  },
+  {
+    question: "How does Reddit influence AI search results?",
+    answer: "Reddit is one of the primary data sources used by major AI models for training. When your brand is discussed positively and authentically across relevant subreddits, AI search engines like ChatGPT, Perplexity, and Google AI are more likely to recommend your brand in response to user queries."
+  },
+  {
+    question: "What is GEO (Generative Engine Optimization)?",
+    answer: "GEO is the practice of optimizing your brand's presence across sources that AI models use for generating responses. Since Reddit is a top training data source for LLMs, strategic Reddit marketing directly improves how often and how favorably AI recommends your brand."
   },
   {
     question: "How long does it take to see results?",
-    answer: "Most clients start seeing increased traffic and engagement within the first 2-4 weeks. However, building a strong Reddit presence is a long-term strategy. The best results come from consistent, authentic participation over 3-6 months."
+    answer: "Most clients start seeing increased Reddit engagement within the first 2-4 weeks. AI search visibility improvements typically follow within 1-3 months as AI models incorporate new Reddit data into their responses. Consistent, authentic participation drives the best long-term results."
   },
   {
     question: "Will my posts get removed or account banned?",
-    answer: "Our team follows all Reddit guidelines and subreddit rules meticulously. We use established accounts with good karma and focus on providing genuine value. Our approach has a 99%+ success rate with no bans or significant post removals."
-  },
-  {
-    question: "What subreddits will you target for my business?",
-    answer: "During our discovery call, we'll research and identify 10-50+ relevant subreddits based on your industry, target audience, and goals. We focus on communities where your ideal customers are actively discussing problems your product solves."
-  },
-  {
-    question: "Can I see examples of your work?",
-    answer: "Due to the nature of organic Reddit marketing, we keep our clients' campaigns confidential to maintain authenticity. However, we can share anonymized case studies and metrics during your consultation call."
+    answer: "Our team follows all Reddit guidelines and subreddit rules meticulously. We focus on providing genuine value to communities rather than spammy promotion. Our approach has a 99%+ success rate with no bans or significant post removals."
   }
 ];
 
@@ -33,7 +33,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-20 bg-white">
+    <section id="faq" className="py-20 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -42,7 +42,7 @@ export default function FAQ() {
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-gray-600">
-            Everything you need to know about Reddit marketing with ReddiReach.
+            Everything you need to know about Reddit marketing and AI search optimization with ReddiReach.
           </p>
         </div>
 
