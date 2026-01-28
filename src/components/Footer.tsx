@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = {
   product: [
@@ -33,11 +34,8 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
           {/* Brand */}
           <div className="col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">R</span>
-              </div>
-              <span className="text-xl font-bold text-white">ReddiReach</span>
+            <Link href="/" className="inline-block mb-4">
+              <Image src="/logo.webp" alt="ReddiReach" width={140} height={48} className="h-10 w-auto invert" />
             </Link>
             <p className="text-gray-400 mb-6 max-w-xs">
               The leading Reddit marketing agency for startups and small businesses. Grow organically on Reddit.
