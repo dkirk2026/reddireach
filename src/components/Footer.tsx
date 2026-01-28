@@ -35,7 +35,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2">
             <Link href="/" className="inline-block mb-4">
-              <Image src="/logo.webp" alt="ReddiReach" width={140} height={48} className="h-10 w-auto invert" />
+              <Image src="/logo.webp" alt="ReddiReach" width={160} height={56} className="h-14 w-auto invert" />
             </Link>
             <p className="text-gray-400 mb-6 max-w-xs">
               The leading Reddit marketing agency for startups and small businesses. Grow organically on Reddit.

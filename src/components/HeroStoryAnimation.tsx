@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import Image from "next/image";
 
 const USER_QUERY = "Best tools for managing a small business in 2026";
 
@@ -160,9 +161,13 @@ export default function HeroStoryAnimation() {
       >
         <div className="bg-white rounded-xl shadow-lg p-3 md:p-4 border-l-2 border-[#ff4500]">
           <div className="flex items-start gap-2 md:gap-3">
-            <div className="w-7 h-7 bg-orange-200 rounded-full flex-shrink-0 flex items-center justify-center">
-              <span className="text-[10px] font-bold text-orange-700">SM</span>
-            </div>
+            <Image
+              src="/avatar_startup_maven.png"
+              alt="u/startup_maven"
+              width={28}
+              height={28}
+              className="w-7 h-7 rounded-full flex-shrink-0"
+            />
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-xs font-semibold text-gray-800">u/startup_maven</span>
