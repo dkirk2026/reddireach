@@ -77,9 +77,17 @@ npm run lint    # Check code style
 - PR to main when ready to go live
 
 ## Available Skills
-Users can type these for help:
+
+**Learning & Guidance:**
 - `/help` - General guidance
 - `/help-local` - Running locally
 - `/help-git` - Git basics
 - `/help-vercel` - Deployment help
 - `/help-site` - Making site changes
+
+**Expert Agents:**
+- `/frontend` - Frontend developer for building features and components
+- `/ux-ui` - UX/UI designer for layout, hierarchy, and user experience
+- `/design` - Design system expert for colors, fonts, spacing, styling
+- `/content` - Copywriter for headlines, descriptions, testimonials, FAQs
+- `/debug` - Troubleshooter for errors, build failures, and broken things

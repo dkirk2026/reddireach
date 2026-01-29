@@ -24,11 +24,20 @@ A modern landing page for ReddiReach - a Reddit marketing and AI visibility opti
    ```
 
 4. **Ask for help!** Type any of these:
+
+   **Learning & Guidance:**
    - `/help` - Get general guidance on using Claude Code
    - `/help-local` - Learn how to run the site locally
    - `/help-git` - Learn Git basics (saving & sharing code)
    - `/help-vercel` - Learn about deployments
    - `/help-site` - Learn how to make changes to the site
+
+   **Expert Agents (they'll do the work for you!):**
+   - `/frontend` - Frontend developer to build features
+   - `/ux-ui` - UX/UI designer to improve the design
+   - `/design` - Design system expert for colors, fonts, styling
+   - `/content` - Copywriter for headlines, text, testimonials
+   - `/debug` - Troubleshooter when something breaks
 
 ### Running the Site Locally
 
