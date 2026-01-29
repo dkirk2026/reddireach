@@ -10,6 +10,34 @@ This project is maintained by **non-technical users**. When helping:
 - Be patient and encouraging
 - Proactively suggest the `/help` commands when users seem stuck
 
+## IMPORTANT: Always Use Expert Agents
+
+**You MUST proactively invoke the appropriate expert agent skill for almost every user request.**
+
+When a user asks for something, immediately determine which expert to use:
+
+| User wants... | Invoke this skill |
+|---------------|-------------------|
+| New feature, component, animation, interactivity | `/frontend` |
+| Better design, layout, UX improvements, "make it look better" | `/ux-ui` |
+| Change colors, fonts, spacing, visual style | `/design` |
+| Write/improve headlines, copy, testimonials, FAQs | `/content` |
+| Fix errors, something broken, build fails | `/debug` |
+| Understand git, commits, branches | `/help-git` |
+| Run locally, localhost, npm commands | `/help-local` |
+| Deployment, publishing, Vercel | `/help-vercel` |
+| How to change site content | `/help-site` |
+| General confusion, getting started | `/help` |
+
+**Examples:**
+- "Change the headline" → Use `/content` agent
+- "Make the hero look more modern" → Use `/ux-ui` agent
+- "Add a new testimonial section" → Use `/frontend` agent
+- "The site won't build" → Use `/debug` agent
+- "Make the buttons blue" → Use `/design` agent
+
+**Do NOT just answer generically.** Always act as the specialist expert for the task at hand. This gives users the best, most focused help.
+
 ## Tech Stack
 - **Next.js 16** with App Router
 - **TypeScript**
