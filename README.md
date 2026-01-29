@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ReddiReach
 
-## Getting Started
+A modern landing page for ReddiReach - a Reddit marketing and AI visibility optimization service.
 
-First, run the development server:
+## Quick Start for Non-Technical Users
+
+**Don't worry if you're new to coding!** This project has a built-in AI assistant (Claude Code) that will help you every step of the way.
+
+### First Time Setup
+
+1. **Install Claude Code** (your AI coding assistant):
+   ```bash
+   curl -fsSL https://claude.ai/install.sh | bash
+   ```
+
+2. **Open Terminal**, navigate to this project:
+   ```bash
+   cd ~/Desktop/reddireach
+   ```
+
+3. **Start Claude Code**:
+   ```bash
+   claude
+   ```
+
+4. **Ask for help!** Type any of these:
+   - `/help` - Get general guidance on using Claude Code
+   - `/help-local` - Learn how to run the site locally
+   - `/help-git` - Learn Git basics (saving & sharing code)
+   - `/help-vercel` - Learn about deployments
+   - `/help-site` - Learn how to make changes to the site
+
+### Running the Site Locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install    # Install dependencies (first time only)
+npm run dev    # Start the development server
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Making Changes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Just tell Claude what you want! Examples:
+- "Change the headline text on the homepage"
+- "Update the testimonial from Sarah Chen"
+- "Change the orange color to blue"
+- "Add a new section about pricing"
 
-## Learn More
+Claude will make the changes for you and explain what it did.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+reddireach/
+├── src/
+│   ├── app/
+│   │   ├── page.tsx          # Main homepage
+│   │   ├── layout.tsx        # App layout & metadata
+│   │   └── globals.css       # Global styles
+│   └── components/
+│       ├── Navbar.tsx        # Navigation bar
+│       ├── Hero.tsx          # Hero section with animation
+│       ├── HeroStoryAnimation.tsx  # Reddit/AI chat animation
+│       ├── FounderQuotes.tsx # Founder testimonials carousel
+│       ├── Features.tsx      # "Who We Are" section
+│       ├── HowItWorks.tsx    # "Our Approach" section
+│       ├── Testimonials.tsx  # Customer testimonials
+│       ├── FAQ.tsx           # FAQ accordion
+│       ├── CTA.tsx           # Call-to-action section
+│       └── Footer.tsx        # Footer
+├── public/                   # Images, logos, avatars
+└── .claude/                  # Claude Code configuration & skills
+```
 
-## Deploy on Vercel
+## Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Next.js 16** - React framework
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS v4** - Utility-first styling
+- **Vercel** - Hosting & deployment (auto-deploys on push to main)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## For Developers
+
+### Development Commands
+
+```bash
+npm run dev      # Start dev server at localhost:3000
+npm run build    # Create production build
+npm run start    # Run production build locally
+npm run lint     # Check for code issues
+```
+
+### Git Workflow
+
+- `main` branch - Production (auto-deploys to Vercel)
+- Feature branches - For development work
+
+```bash
+git checkout -b my-feature   # Create new branch
+git add .                    # Stage changes
+git commit -m "Description"  # Commit changes
+git push                     # Push to GitHub
+```
+
+Then create a Pull Request on GitHub to merge into main.
+
+### Deployment
+
+Every push to `main` automatically deploys to production via Vercel. No manual deployment needed!
+
+---
+
+## Need Help?
+
+1. **In Claude Code**: Type `/help` for guidance
+2. **GitHub Issues**: Report bugs or request features
+3. **Vercel Dashboard**: Check deployment status
+
+Built with Claude Code
