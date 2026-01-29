@@ -7,11 +7,46 @@ import Image from "next/image";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("/");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Track active section based on scroll position
+  useEffect(() => {
+    const sectionIds = ["features", "how-it-works", "testimonials", "faq", "contact"];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(`#${entry.target.id}`);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
+    );
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    // Set Home as active when at top
+    const handleScroll = () => {
+      if (window.scrollY < 100) {
+        setActiveSection("/");
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -33,13 +68,16 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              className={`relative px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 scrolled
                   ? "text-gray-600 hover:text-[#ff4500] hover:bg-orange-50"
                   : "text-gray-700 hover:text-[#ff4500] hover:bg-white/60"
-              }`}
+              } ${activeSection === link.href ? "text-[#ff4500]" : ""}`}
             >
               {link.label}
+              {activeSection === link.href && (
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-[#ff4500] rounded-full" />
+              )}
             </Link>
           ))}
 
@@ -65,13 +103,16 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              className={`relative px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 scrolled
                   ? "text-gray-600 hover:text-[#ff4500] hover:bg-orange-50"
                   : "text-gray-700 hover:text-[#ff4500] hover:bg-white/60"
-              }`}
+              } ${activeSection === link.href ? "text-[#ff4500]" : ""}`}
             >
               {link.label}
+              {activeSection === link.href && (
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-[#ff4500] rounded-full" />
+              )}
             </Link>
           ))}
           <Link
@@ -130,7 +171,11 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block px-4 py-3 text-gray-600 hover:text-[#ff4500] hover:bg-orange-50 rounded-xl transition-colors font-medium"
+                className={`block px-4 py-3 hover:text-[#ff4500] hover:bg-orange-50 rounded-xl transition-colors font-medium ${
+                  activeSection === link.href
+                    ? "text-[#ff4500] bg-orange-50"
+                    : "text-gray-600"
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}

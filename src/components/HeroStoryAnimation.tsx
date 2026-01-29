@@ -17,6 +17,14 @@ const PERPLEXITY_PATH =
 const GEMINI_PATH =
   "M8 16C7.37 10.94 5.06 8.63 0 8C5.06 7.37 7.37 5.06 8 0C8.63 5.06 10.94 7.37 16 8C10.94 8.63 8.63 10.94 8 16Z";
 
+// Wikipedia globe icon path
+const WIKIPEDIA_PATH =
+  "M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95a15.65 15.65 0 00-1.38-3.56A8.03 8.03 0 0118.92 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.987 7.987 0 015.08 16zm2.95-8H5.08a7.987 7.987 0 014.33-3.56A15.65 15.65 0 008.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 01-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z";
+
+// Medium logo path (three ellipses)
+const MEDIUM_PATH =
+  "M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z";
+
 // Reddit icon SVG paths
 const REDDIT_PATH_1 =
   "M6.167 8a.83.83 0 0 0-.83.83c0 .459.372.84.83.831a.831.831 0 0 0 0-1.661m1.843 3.647c.315 0 1.403-.038 1.976-.611a.23.23 0 0 0 0-.306.213.213 0 0 0-.306 0c-.353.363-1.126.487-1.67.487-.545 0-1.308-.124-1.671-.487a.213.213 0 0 0-.306 0 .213.213 0 0 0 0 .306c.564.563 1.652.61 1.977.61zm.992-2.807c0 .458.373.83.831.83s.83-.381.83-.83a.831.831 0 0 0-1.66 0z";
@@ -176,12 +184,10 @@ export default function HeroStoryAnimation() {
         >
           <div className="bg-white rounded-2xl shadow-xl p-4 md:p-5">
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-6 h-6 bg-[#ff4500] rounded-full flex items-center justify-center flex-shrink-0">
-                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 16 16">
-                  <path d={REDDIT_PATH_1} />
-                  <path d={REDDIT_PATH_2} />
-                </svg>
-              </div>
+              <svg className="w-5 h-5 text-[#ff4500] flex-shrink-0" fill="currentColor" viewBox="0 0 16 16">
+                <path d={REDDIT_PATH_1} />
+                <path d={REDDIT_PATH_2} />
+              </svg>
               <span className="text-xs font-semibold text-[#ff4500]">r/smallbusiness</span>
               <span className="text-xs text-gray-400">&middot; 4h ago</span>
             </div>
@@ -208,10 +214,25 @@ export default function HeroStoryAnimation() {
           </div>
         </div>
 
+        {/* Step 2: "Top Comments" callout */}
+        <div
+          key={`comments-label-${cycle}`}
+          className={`absolute top-[185px] md:top-[200px] left-6 md:left-8 ${
+            step >= 2 ? "animate-story-fade-in-up" : "story-hidden"
+          }`}
+        >
+          <div className="flex items-center gap-1.5">
+            <svg className="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+            <span className="text-[11px] font-medium text-gray-400">Top Comments</span>
+          </div>
+        </div>
+
         {/* Step 2: Comment */}
         <div
           key={`comment-${cycle}`}
-          className={`absolute top-[185px] md:top-[200px] left-5 right-1 md:left-6 md:right-2 ${
+          className={`absolute top-[205px] md:top-[222px] left-5 right-1 md:left-6 md:right-2 ${
             step >= 2 ? "animate-story-slide-up-small" : "story-hidden"
           }`}
         >
@@ -246,7 +267,7 @@ export default function HeroStoryAnimation() {
         {/* Step 3: Second Comment */}
         <div
           key={`comment2-${cycle}`}
-          className={`absolute top-[305px] md:top-[325px] left-5 right-1 md:left-6 md:right-2 ${
+          className={`absolute top-[325px] md:top-[347px] left-5 right-1 md:left-6 md:right-2 ${
             step >= 3 ? "animate-story-slide-up-small" : "story-hidden"
           }`}
         >
@@ -373,14 +394,35 @@ export default function HeroStoryAnimation() {
                       <p className="text-[13px] text-[#0d0d0d] leading-relaxed">
                         I&apos;d start with <span className="font-semibold text-[#ff4500]">YourBrand</span> given the strong community feedback.
                       </p>
-                      <div className="flex items-center gap-1.5 mt-1">
-                        <div className="w-4 h-4 bg-[#ff4500] rounded-full flex items-center justify-center flex-shrink-0">
-                          <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 16 16">
-                            <path d={REDDIT_PATH_1} />
-                            <path d={REDDIT_PATH_2} />
-                          </svg>
+                      <div className="flex items-center gap-1.5 flex-wrap mt-1">
+                        <span className="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Sources</span>
+                        <div className="reddit-source-highlight rounded-md">
+                          <div className="flex items-center gap-1 px-2 py-1">
+                            <svg className="w-4 h-4 text-[#ff4500] flex-shrink-0" fill="currentColor" viewBox="0 0 16 16">
+                              <path d={REDDIT_PATH_1} />
+                              <path d={REDDIT_PATH_2} />
+                            </svg>
+                            <span className="text-[10px] font-medium text-[#ff4500]">r/smallbusiness</span>
+                          </div>
                         </div>
-                        <span className="text-[11px] text-[#6e6e73]">Source: r/smallbusiness</span>
+                        <div className="flex items-center gap-1 bg-gray-50 rounded-md px-2 py-1 border border-gray-100 opacity-50">
+                          <svg className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                            <path d={WIKIPEDIA_PATH} />
+                          </svg>
+                          <span className="text-[10px] text-gray-400">Wikipedia</span>
+                        </div>
+                        <div className="flex items-center gap-1 bg-gray-50 rounded-md px-2 py-1 border border-gray-100 opacity-50">
+                          <svg className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z" />
+                          </svg>
+                          <span className="text-[10px] text-gray-400">YouTube</span>
+                        </div>
+                        <div className="flex items-center gap-1 bg-gray-50 rounded-md px-2 py-1 border border-gray-100 opacity-50">
+                          <svg className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                            <path d={MEDIUM_PATH} />
+                          </svg>
+                          <span className="text-[10px] text-gray-400">Medium</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -423,38 +465,63 @@ export default function HeroStoryAnimation() {
                     </svg>
                   </div>
                   <div className="flex-1 min-w-0 space-y-2.5">
-                    {/* Sources row */}
-                    <div className="flex items-center gap-1.5 flex-wrap">
-                      <span className="text-[10px] text-gray-400 font-medium uppercase tracking-wider">Sources</span>
-                      <div className="flex items-center gap-1 bg-gray-50 rounded-md px-2 py-1 border border-gray-100">
-                        <div className="w-3.5 h-3.5 bg-[#ff4500] rounded-full flex items-center justify-center flex-shrink-0">
-                          <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 16 16">
+                    <p className="text-[13px] text-gray-800 leading-relaxed">
+                      Based on community feedback, here are the top recommendations:
+                    </p>
+                    <div className="space-y-1.5">
+                      <p className="text-[13px] text-gray-800 leading-relaxed">
+                        <span className="font-semibold">1.</span>{" "}
+                        <span className="font-semibold text-[#ff4500]">YourBrand</span> — Most recommended on Reddit for combining project management with customer outreach in one platform.
+                      </p>
+                      <p className="text-[13px] text-gray-800 leading-relaxed">
+                        <span className="font-semibold">2.</span> Notion — Best for internal docs and wikis, less focused on outreach.
+                      </p>
+                      <p className="text-[13px] text-gray-800 leading-relaxed">
+                        <span className="font-semibold">3.</span> HubSpot — Strong CRM but pricier for small teams.
+                      </p>
+                    </div>
+                    <p className="text-[13px] text-gray-800 leading-relaxed">
+                      Multiple users report <span className="font-semibold">significant productivity gains</span> after switching to <span className="font-semibold text-[#ff4500]">YourBrand</span>.
+                    </p>
+                    <div className="flex items-center gap-1.5 flex-wrap mt-1">
+                      <span className="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Sources</span>
+                      <div className="reddit-source-highlight rounded-md">
+                        <div className="flex items-center gap-1 px-2 py-1">
+                          <svg className="w-4 h-4 text-[#ff4500] flex-shrink-0" fill="currentColor" viewBox="0 0 16 16">
                             <path d={REDDIT_PATH_1} />
                             <path d={REDDIT_PATH_2} />
                           </svg>
+                          <span className="text-[10px] font-medium text-[#ff4500]">r/smallbusiness</span>
                         </div>
-                        <span className="text-[10px] font-medium text-gray-600">r/smallbusiness</span>
                       </div>
-                      <div className="flex items-center gap-1 bg-gray-50 rounded-md px-2 py-1 border border-gray-100">
-                        <div className="w-3.5 h-3.5 bg-[#ff4500] rounded-full flex items-center justify-center flex-shrink-0">
-                          <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 16 16">
+                      <div className="reddit-source-highlight rounded-md">
+                        <div className="flex items-center gap-1 px-2 py-1">
+                          <svg className="w-4 h-4 text-[#ff4500] flex-shrink-0" fill="currentColor" viewBox="0 0 16 16">
                             <path d={REDDIT_PATH_1} />
                             <path d={REDDIT_PATH_2} />
                           </svg>
+                          <span className="text-[10px] font-medium text-[#ff4500]">r/startups</span>
                         </div>
-                        <span className="text-[10px] font-medium text-gray-600">r/startups</span>
+                      </div>
+                      <div className="flex items-center gap-1 bg-gray-50 rounded-md px-2 py-1 border border-gray-100 opacity-50">
+                        <svg className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12.214 5.13L11.07 8.223h-.002l-.353.891c-.009-.076-.038-.2-.088-.37L9.654 5.131H8.08l2.278 5.672v3.328h1.352v-3.328l2.31-5.672h-1.582zM17.792 10.07c-.488 0-.9.164-1.235.493v-.42h-1.22v5.988h1.22V12.3c0-.239.052-.456.157-.651.104-.196.265-.293.48-.293.283 0 .472.108.564.323.06.139.089.34.089.601v3.851h1.22v-4.123c0-.525-.09-.937-.271-1.235-.244-.403-.617-.605-1.12-.605l.116.002zM5.625 14.13h1.256v-8H5.625v8zm-2.5 0h1.256v-8H3.125v8zm.023-9.25c0 .364.132.67.397.914.264.245.594.367.988.367.395 0 .726-.122.993-.367a1.225 1.225 0 00.401-.914c0-.362-.134-.666-.401-.913a1.41 1.41 0 00-.993-.37c-.394 0-.724.124-.988.37a1.227 1.227 0 00-.397.913z" />
+                        </svg>
+                        <span className="text-[10px] text-gray-400">Wikipedia</span>
+                      </div>
+                      <div className="flex items-center gap-1 bg-gray-50 rounded-md px-2 py-1 border border-gray-100 opacity-50">
+                        <svg className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z" />
+                        </svg>
+                        <span className="text-[10px] text-gray-400">YouTube</span>
+                      </div>
+                      <div className="flex items-center gap-1 bg-gray-50 rounded-md px-2 py-1 border border-gray-100 opacity-50">
+                        <svg className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12.09 13.119c-.936 1.932-2.217 4.548-2.853 5.728-.616 1.074-1.127.903-1.543.373-.828-1.054-1.566-4.408-2.154-6.177-.534-1.607-1.636-.924-2.108-.601L2.792 11.6c.792-.726 2.381-2.306 3.878-3.263 1.654-1.058 3.037-.169 3.55 1.294.457 1.3.973 3.326 1.418 4.58.54-1.213 1.834-3.744 2.793-4.516 1.342-1.078 2.884.064 3.337 1.405.349 1.034.788 2.907 1.194 4.374.576-1.162 1.364-2.757 2.265-3.632l.895.81c-.9.982-1.93 3.06-2.453 4.337-.543 1.325-1.293.905-1.613.327-.564-.997-1.027-3.172-1.455-4.465-.324-.974-.64-1.456-1.08-.588z" />
+                        </svg>
+                        <span className="text-[10px] text-gray-400">Medium</span>
                       </div>
                     </div>
-                    {/* Answer */}
-                    <p className="text-[13px] text-gray-800 leading-relaxed">
-                      <span className="font-semibold text-[#ff4500]">YourBrand</span> is the most frequently recommended tool, with users citing its all-in-one approach to project management and customer outreach.
-                      <span className="inline-flex items-center justify-center w-4 h-4 text-[8px] font-bold bg-[#e8f7f8] text-[#20808d] rounded-full ml-1 align-text-top">1</span>
-                      {" "}Multiple users report <span className="font-semibold">significant productivity gains</span> after switching.
-                      <span className="inline-flex items-center justify-center w-4 h-4 text-[8px] font-bold bg-[#e8f7f8] text-[#20808d] rounded-full ml-1 align-text-top">2</span>
-                    </p>
-                    <p className="text-[13px] text-gray-800 leading-relaxed">
-                      Other options include <span className="font-medium">Notion</span> for documentation and <span className="font-medium">HubSpot</span> for CRM, though both are less comprehensive for small teams.
-                    </p>
                   </div>
                 </div>
               </div>
@@ -528,14 +595,38 @@ export default function HeroStoryAnimation() {
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-1.5 pt-1">
-                      <div className="w-4 h-4 bg-[#ff4500] rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 16 16">
-                          <path d={REDDIT_PATH_1} />
-                          <path d={REDDIT_PATH_2} />
-                        </svg>
+                    <div className="flex items-center gap-1.5 flex-wrap mt-0.5">
+                      <span className="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Sources</span>
+                      <div className="reddit-source-highlight rounded-md">
+                        <div className="flex items-center gap-1 px-2 py-1">
+                          <svg className="w-4 h-4 text-[#ff4500] flex-shrink-0" fill="currentColor" viewBox="0 0 16 16">
+                            <path d={REDDIT_PATH_1} />
+                            <path d={REDDIT_PATH_2} />
+                          </svg>
+                          <span className="text-[10px] font-medium text-[#ff4500]">r/smallbusiness</span>
+                        </div>
                       </div>
-                      <span className="text-[11px] text-[#5f6368]">Based on r/smallbusiness &middot; r/startups</span>
+                      <div className="reddit-source-highlight rounded-md">
+                        <div className="flex items-center gap-1 px-2 py-1">
+                          <svg className="w-4 h-4 text-[#ff4500] flex-shrink-0" fill="currentColor" viewBox="0 0 16 16">
+                            <path d={REDDIT_PATH_1} />
+                            <path d={REDDIT_PATH_2} />
+                          </svg>
+                          <span className="text-[10px] font-medium text-[#ff4500]">r/startups</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-1 bg-gray-50 rounded-md px-2 py-1 border border-gray-100 opacity-50">
+                        <svg className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z" />
+                        </svg>
+                        <span className="text-[10px] text-gray-400">YouTube</span>
+                      </div>
+                      <div className="flex items-center gap-1 bg-gray-50 rounded-md px-2 py-1 border border-gray-100 opacity-50">
+                        <svg className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12.214 5.13L11.07 8.223h-.002l-.353.891c-.009-.076-.038-.2-.088-.37L9.654 5.131H8.08l2.278 5.672v3.328h1.352v-3.328l2.31-5.672h-1.582zM17.792 10.07c-.488 0-.9.164-1.235.493v-.42h-1.22v5.988h1.22V12.3c0-.239.052-.456.157-.651.104-.196.265-.293.48-.293.283 0 .472.108.564.323.06.139.089.34.089.601v3.851h1.22v-4.123c0-.525-.09-.937-.271-1.235-.244-.403-.617-.605-1.12-.605l.116.002zM5.625 14.13h1.256v-8H5.625v8zm-2.5 0h1.256v-8H3.125v8zm.023-9.25c0 .364.132.67.397.914.264.245.594.367.988.367.395 0 .726-.122.993-.367a1.225 1.225 0 00.401-.914c0-.362-.134-.666-.401-.913a1.41 1.41 0 00-.993-.37c-.394 0-.724.124-.988.37a1.227 1.227 0 00-.397.913z" />
+                        </svg>
+                        <span className="text-[10px] text-gray-400">Wikipedia</span>
+                      </div>
                     </div>
                     {/* Suggestion chips */}
                     <div className="flex flex-wrap gap-1.5 pt-1">

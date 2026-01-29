@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 const testimonials = [
   {
     quote: "ReddiReach got our brand mentioned across key subreddits. Within weeks, ChatGPT started recommending us. Game changer.",
@@ -86,23 +89,51 @@ export default function Testimonials() {
         </div>
 
         {/* Partner Platforms */}
-        <div className="mt-16 text-center">
-          <p className="text-gray-500 mb-8 font-medium">Our Partner Platforms</p>
-          <div className="flex flex-wrap justify-center items-center gap-10">
-            {[
-              { name: "ChatGPT", icon: "M" },
-              { name: "Perplexity", icon: "P" },
-              { name: "Google AI", icon: "G" },
-              { name: "Reddit", icon: "R" },
-              { name: "Claude", icon: "C" }
-            ].map((platform, index) => (
-              <div key={index} className="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
-                <div className="w-8 h-8 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 font-bold text-sm">
-                  {platform.icon}
-                </div>
-                <span className="text-lg font-semibold text-gray-400">{platform.name}</span>
-              </div>
-            ))}
+        <div className="mt-20 bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
+          <div className="text-center mb-10">
+            <span className="text-[#ff4500] font-semibold text-sm uppercase tracking-wider">Powered By</span>
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mt-3">
+              Our Partner Platforms
+            </h3>
+            <p className="text-gray-500 mt-3 max-w-md mx-auto">
+              We leverage industry-leading tools to maximize your brand&apos;s AI visibility
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 md:gap-10">
+            <Link
+              href="https://www.subredditsignals.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 bg-gray-50 hover:bg-white px-6 py-4 rounded-xl border border-gray-200 hover:border-[#ff4500]/30 hover:shadow-lg hover:shadow-orange-100/50 transition-all duration-300"
+            >
+              <Image
+                src="/subredditsignals-logo.jpg"
+                alt="Subreddit Signals"
+                width={180}
+                height={50}
+                className="h-8 md:h-10 w-auto"
+              />
+              <svg className="w-4 h-4 text-gray-400 group-hover:text-[#ff4500] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </Link>
+            <Link
+              href="https://www.aipeekaboo.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 bg-gray-50 hover:bg-white px-6 py-4 rounded-xl border border-gray-200 hover:border-[#ff4500]/30 hover:shadow-lg hover:shadow-orange-100/50 transition-all duration-300"
+            >
+              <Image
+                src="/peekaboo-logo.png"
+                alt="AI Peekaboo"
+                width={180}
+                height={50}
+                className="h-8 md:h-10 w-auto"
+              />
+              <svg className="w-4 h-4 text-gray-400 group-hover:text-[#ff4500] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </Link>
           </div>
         </div>
       </div>
