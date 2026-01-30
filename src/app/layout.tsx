@@ -9,6 +9,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
   title: "ReddiReach | #1 Reddit Marketing and AI Search Optimization Agency",
   description: "Boost your startup's visibility on Reddit and AI search engines like ChatGPT, Perplexity, and Gemini. ReddiReach offers organic Reddit marketing and GEO (Generative Engine Optimization) services for startups and small businesses.",
   keywords: "Reddit marketing, Reddit advertising, organic marketing, startup marketing, small business marketing, GEO, generative engine optimization, AI search optimization, ChatGPT marketing, Perplexity SEO",
