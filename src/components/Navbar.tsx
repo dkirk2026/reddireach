@@ -99,7 +99,7 @@ export default function Navbar() {
 
           {[
             { label: "Testimonials", href: "#testimonials" },
-            { label: "Blog", href: "#" },
+            { label: "Blog", href: "/blog" },
             { label: "FAQ", href: "#faq" },
           ].map((link) => (
             <Link
@@ -174,7 +174,7 @@ export default function Navbar() {
               { label: "Who We Are", href: "#features" },
               { label: "Our Approach", href: "#how-it-works" },
               { label: "Testimonials", href: "#testimonials" },
-              { label: "Blog", href: "#" },
+              { label: "Blog", href: "/blog" },
               { label: "FAQ", href: "#faq" },
             ].map((link) => (
               <Link

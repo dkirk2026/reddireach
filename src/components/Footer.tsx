@@ -9,7 +9,7 @@ const footerLinks = {
   ],
   company: [
     { name: "About Us", href: "#features" },
-    { name: "Blog", href: "#" },
+    { name: "Blog", href: "/blog" },
     { name: "Contact", href: "https://calendly.com/kirkco/chat" }
   ],
   legal: [
