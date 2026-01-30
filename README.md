@@ -37,6 +37,7 @@ A modern landing page for ReddiReach - a Reddit marketing and AI visibility opti
    - `/ux-ui` - UX/UI designer to improve the design
    - `/design` - Design system expert for colors, fonts, styling
    - `/content` - Copywriter for headlines, text, testimonials
+   - `/seo` - SEO specialist for search rankings and metadata
    - `/debug` - Troubleshooter when something breaks
 
 ### Running the Site Locally

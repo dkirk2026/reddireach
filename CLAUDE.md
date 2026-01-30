@@ -118,4 +118,5 @@ npm run lint    # Check code style
 - `/ux-ui` - UX/UI designer for layout, hierarchy, and user experience
 - `/design` - Design system expert for colors, fonts, spacing, styling
 - `/content` - Copywriter for headlines, descriptions, testimonials, FAQs
+- `/seo` - SEO specialist for search optimization, metadata, structured data
 - `/debug` - Troubleshooter for errors, build failures, and broken things
