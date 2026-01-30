@@ -9,7 +9,7 @@ export default function Features() {
             Professional Marketing Consultants
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed">
-            Professional marketing consultants and experts with years of experience—marketing for more than 500 companies to date.
+            Professional marketing consultants and experts with years of experience. We've provided marketing services for more than 500 companies to date.
           </p>
         </div>
 
@@ -38,7 +38,7 @@ export default function Features() {
           {[
             {
               title: "Reddit Marketing Experts",
-              description: "We specialize exclusively in Reddit. Our team understands the culture, communities, and how Reddit data feeds directly into AI search models.",
+              description: "We specialize in Reddit. Our team understands the culture, communities, and how Reddit data feeds directly into AI search models.",
               icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />

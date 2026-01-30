@@ -51,6 +51,8 @@ export default function Navbar() {
 
   return (
     <nav
+      role="navigation"
+      aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/95 backdrop-blur-md shadow-sm py-2"
@@ -115,12 +117,14 @@ export default function Navbar() {
               )}
             </Link>
           ))}
-          <Link
-            href="#contact"
+          <a
+            href="https://calendly.com/kirkco/chat"
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-2 bg-[#ff4500] hover:bg-[#cc3700] text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:shadow-lg hover:shadow-orange-200/50"
           >
             Let&apos;s Chat
-          </Link>
+          </a>
         </div>
 
         {/* Mobile: logo centered, hamburger on right */}
@@ -139,11 +143,13 @@ export default function Navbar() {
             />
           </Link>
           <button
-            className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="p-2 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-[#ff4500] focus:ring-offset-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
-            <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               {isMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -155,6 +161,9 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         <div
+          id="mobile-menu"
+          role="menu"
+          aria-hidden={!isMenuOpen}
           className={`md:hidden overflow-hidden transition-all duration-300 ${
             isMenuOpen ? "max-h-80 opacity-100 mt-4" : "max-h-0 opacity-0"
           }`}
@@ -182,13 +191,15 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="pt-2">
-              <Link
-                href="#contact"
+              <a
+                href="https://calendly.com/kirkco/chat"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block bg-[#ff4500] hover:bg-[#cc3700] text-white px-4 py-3 rounded-xl font-semibold transition-colors text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Let&apos;s Chat
-              </Link>
+              </a>
             </div>
           </div>
         </div>

@@ -3,39 +3,39 @@ import Link from "next/link";
 
 const testimonials = [
   {
-    quote: "ReddiReach got our brand mentioned across key subreddits. Within weeks, ChatGPT started recommending us. Game changer.",
-    author: "Sarah Chen",
-    role: "Founder, TechStartup.io",
+    quote: "ReddiReach really understands Reddit as native users, not just marketers. Within weeks, ChatGPT started recommending us. That level of expertise is rare.",
+    author: "Sarah C.",
+    role: "Founder, Tech Startup",
     avatar: "SC"
   },
   {
-    quote: "Their GEO strategy is brilliant. Our competitors had no idea why AI was suddenly recommending us over them. ReddiReach does.",
-    author: "Michael Torres",
-    role: "CEO, SaaSMetrics",
+    quote: "Honest and straightforward, no unnecessary jargon or overpromises. They suggested a simple, sustainable plan and their approach to Reddit has been incredibly successful.",
+    author: "Michael T.",
+    role: "CEO, SaaS Company",
     avatar: "MT"
   },
   {
-    quote: "We saw a 340% increase in organic traffic after ReddiReach optimized our Reddit presence for AI search. The ROI is unmatched.",
-    author: "Emily Watson",
-    role: "Marketing Director, DevTools Co",
+    quote: "ReddiReach executed the plan they laid out perfectly. We got 2,150 new website visitors from AI search in month one. Highly recommend them.",
+    author: "Emily W.",
+    role: "Marketing Director, Ecommerce Brand",
     avatar: "EW"
   },
   {
-    quote: "Professional, authentic, and they actually understand how AI search works. Not just posting on Reddit—they're engineering brand visibility.",
-    author: "David Park",
-    role: "Founder, CloudSync",
+    quote: "What I've appreciated most is the collaborative partnership and their ability to take feedback and actually use it to improve the work. That level of responsiveness is rare.",
+    author: "David P.",
+    role: "Founder, DTC Ecommerce Brand",
     avatar: "DP"
   },
   {
-    quote: "Perplexity and ChatGPT now recommend our platform by name. That started after ReddiReach's Reddit campaign. The data speaks for itself.",
-    author: "Jessica Liu",
-    role: "Growth Lead, FinanceApp",
+    quote: "Working with ReddiReach was a great experience. They're committed, responsive, and efficient. Perplexity and ChatGPT now recommend our platform by name.",
+    author: "Jessica L.",
+    role: "Growth Lead, Fintech Startup",
     avatar: "JL"
   },
   {
-    quote: "The team combines Reddit marketing expertise with deep AI search knowledge. We're now the #1 recommended tool in our category on AI platforms.",
-    author: "Alex Morrison",
-    role: "Co-founder, MarketingPro",
+    quote: "Delivered above and beyond. The team combines Reddit marketing expertise with deep AI search knowledge. Pleasure to work with and look forward to continuing together.",
+    author: "Alex M.",
+    role: "Co-founder, Marketing Agency",
     avatar: "AM"
   }
 ];
@@ -130,7 +130,7 @@ export default function Testimonials() {
                 height={50}
                 className="h-8 md:h-10 w-auto"
               />
-              <svg className="w-4 h-4 text-gray-400 group-hover:text-[#ff4500] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-gray-400 group-hover:text-[#ff4500] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </Link>

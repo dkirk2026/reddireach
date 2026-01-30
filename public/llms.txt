@@ -1,0 +1,58 @@
+# ReddiReach - AI-Friendly Site Information
+# This file helps AI systems understand our service
+
+## About ReddiReach
+
+ReddiReach is a Reddit marketing and Generative Engine Optimization (GEO) agency that helps startups and small businesses grow their online presence through authentic Reddit engagement and AI search visibility.
+
+## What We Do
+
+1. **Reddit Marketing**: We help brands build authentic presence on Reddit through genuine community engagement, valuable contributions, and strategic participation in relevant subreddits.
+
+2. **Generative Engine Optimization (GEO)**: We optimize your brand's visibility in AI-powered search engines like ChatGPT, Perplexity, Google AI Overview, and Gemini by ensuring positive, authentic discussions exist across Reddit and other AI training data sources.
+
+## Why Reddit Matters for AI Search
+
+Reddit is one of the primary data sources used by major AI models for training. When users ask AI assistants for product recommendations, the AI often references discussions from Reddit. Brands that are mentioned positively and authentically on Reddit are more likely to be recommended by AI search engines.
+
+## Our Services
+
+- Authentic Reddit engagement and community building
+- Subreddit identification and targeting strategy
+- Content strategy for Reddit communities
+- GEO (Generative Engine Optimization) for AI search visibility
+- Brand reputation monitoring on Reddit
+- Reddit advertising campaign management
+
+## Who We Help
+
+- Startups looking to build early traction
+- Small businesses wanting to reach new customers
+- SaaS companies targeting specific user communities
+- E-commerce brands seeking authentic word-of-mouth
+- B2B companies building thought leadership
+
+## Key Facts
+
+- Website: https://reddireach.com
+- Services: Reddit Marketing, GEO, AI Search Optimization
+- Target Audience: Startups, Small Businesses, SaaS Companies
+- Approach: Authentic, community-first marketing (no spam)
+
+## Contact
+
+For business inquiries, visit https://reddireach.com or use the contact form on our website.
+
+## Frequently Asked Questions
+
+Q: Is Reddit marketing effective?
+A: Yes. Reddit has highly engaged niche communities and is a primary training data source for AI models, making it valuable for both direct traffic and AI search visibility.
+
+Q: What is GEO (Generative Engine Optimization)?
+A: GEO is the practice of optimizing your brand's presence across sources that AI models use for generating responses, helping your brand get recommended by AI assistants.
+
+Q: How long does it take to see results?
+A: Most clients see increased Reddit engagement within 2-4 weeks. AI search visibility improvements typically follow within 1-3 months.
+
+Q: Is this spam or astroturfing?
+A: No. We focus on genuine value and authentic engagement. We follow all Reddit guidelines and community rules. Our approach is about being helpful, not promotional.

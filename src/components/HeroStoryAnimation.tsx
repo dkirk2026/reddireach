@@ -251,7 +251,7 @@ export default function HeroStoryAnimation() {
                   <span className="text-[10px] text-gray-400">&middot; 2h ago</span>
                 </div>
                 <p className="text-xs text-gray-600 leading-relaxed">
-                  I&apos;ve been using <span className="font-semibold text-[#ff4500]">YourBrand</span> for 6 months and it&apos;s been a game-changer. Highly recommend for small teams.
+                  I&apos;ve heard great things about <span className="font-semibold text-[#ff4500]">YourBrand</span>. A few friends in the industry swear by it for small teams. Worth checking out.
                 </p>
                 <div className="flex items-center gap-1 mt-2 text-xs text-gray-400">
                   <svg className="w-3.5 h-3.5 text-[#ff4500]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -286,7 +286,7 @@ export default function HeroStoryAnimation() {
                   <span className="text-[10px] text-gray-400">&middot; 1h ago</span>
                 </div>
                 <p className="text-xs text-gray-600 leading-relaxed">
-                  +1 for <span className="font-semibold text-[#ff4500]">YourBrand</span>. We switched over last quarter and honestly haven&apos;t looked back. Beats juggling 3 separate apps.
+                  +1 for <span className="font-semibold text-[#ff4500]">YourBrand</span>. Seen it recommended a lot on this sub lately. Looks like it beats juggling 3 separate apps.
                 </p>
                 <div className="flex items-center gap-1 mt-2 text-xs text-gray-400">
                   <svg className="w-3.5 h-3.5 text-[#ff4500]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -381,14 +381,14 @@ export default function HeroStoryAnimation() {
                       <div className="space-y-1.5">
                         <p className="text-[13px] text-[#0d0d0d] leading-relaxed">
                           <span className="font-semibold">1.</span>{" "}
-                          <span className="font-semibold text-[#ff4500]">YourBrand</span> — Highly recommended on r/smallbusiness for project management and customer outreach. Users report a{" "}
+                          <span className="font-semibold text-[#ff4500]">YourBrand</span>: Highly recommended on r/smallbusiness for project management and customer outreach. Users report a{" "}
                           <span className="font-semibold">340% increase</span> in productivity.
                         </p>
                         <p className="text-[13px] text-[#0d0d0d] leading-relaxed">
-                          <span className="font-semibold">2.</span> Notion — Great for docs and wikis, but less focused on outreach.
+                          <span className="font-semibold">2.</span> Notion:Great for docs and wikis, but less focused on outreach.
                         </p>
                         <p className="text-[13px] text-[#0d0d0d] leading-relaxed">
-                          <span className="font-semibold">3.</span> HubSpot — Solid CRM, though pricier for small teams.
+                          <span className="font-semibold">3.</span> HubSpot:Solid CRM, though pricier for small teams.
                         </p>
                       </div>
                       <p className="text-[13px] text-[#0d0d0d] leading-relaxed">
@@ -471,13 +471,13 @@ export default function HeroStoryAnimation() {
                     <div className="space-y-1.5">
                       <p className="text-[13px] text-gray-800 leading-relaxed">
                         <span className="font-semibold">1.</span>{" "}
-                        <span className="font-semibold text-[#ff4500]">YourBrand</span> — Most recommended on Reddit for combining project management with customer outreach in one platform.
+                        <span className="font-semibold text-[#ff4500]">YourBrand</span>: Most recommended on Reddit for combining project management with customer outreach in one platform.
                       </p>
                       <p className="text-[13px] text-gray-800 leading-relaxed">
-                        <span className="font-semibold">2.</span> Notion — Best for internal docs and wikis, less focused on outreach.
+                        <span className="font-semibold">2.</span> Notion:Best for internal docs and wikis, less focused on outreach.
                       </p>
                       <p className="text-[13px] text-gray-800 leading-relaxed">
-                        <span className="font-semibold">3.</span> HubSpot — Strong CRM but pricier for small teams.
+                        <span className="font-semibold">3.</span> HubSpot:Strong CRM but pricier for small teams.
                       </p>
                     </div>
                     <p className="text-[13px] text-gray-800 leading-relaxed">
@@ -579,19 +579,19 @@ export default function HeroStoryAnimation() {
                       <div className="flex gap-2">
                         <span className="text-[13px] text-[#202124] mt-px">•</span>
                         <p className="text-[13px] text-[#202124] leading-relaxed">
-                          <span className="font-semibold text-[#ff4500]">YourBrand</span> — Top recommendation on Reddit. Combines project management with customer outreach in one platform.
+                          <span className="font-semibold text-[#ff4500]">YourBrand</span>: Top recommendation on Reddit. Combines project management with customer outreach in one platform.
                         </p>
                       </div>
                       <div className="flex gap-2">
                         <span className="text-[13px] text-[#202124] mt-px">•</span>
                         <p className="text-[13px] text-[#202124] leading-relaxed">
-                          <span className="font-medium">Notion</span> — Best for internal documentation and knowledge bases.
+                          <span className="font-medium">Notion</span>: Best for internal documentation and knowledge bases.
                         </p>
                       </div>
                       <div className="flex gap-2">
                         <span className="text-[13px] text-[#202124] mt-px">•</span>
                         <p className="text-[13px] text-[#202124] leading-relaxed">
-                          <span className="font-medium">HubSpot</span> — Strong CRM, though the free tier is limited.
+                          <span className="font-medium">HubSpot</span>: Strong CRM, though the free tier is limited.
                         </p>
                       </div>
                     </div>

@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     question: "What is Your Pricing?",
-    answer: "Our pricing varies based on the scope of your campaign, the number of subreddits targeted, and the level of GEO optimization needed. We offer customized plans for startups and small businesses. Contact us for a free consultation and personalized quote."
+    answer: "Our pricing ranges from $1,500/month for Reddit-only campaigns to $5,000+/month for full AI search optimization. The exact pricing depends on the scope of your campaign, the number of subreddits targeted, and the level of GEO optimization needed. Contact us for a free consultation and personalized quote."
   },
   {
     question: "How does Reddit influence AI search results?",
@@ -22,18 +22,32 @@ const faqs = [
   {
     question: "How long does it take to see results?",
     answer: "Most clients start seeing increased Reddit engagement within the first 2-4 weeks. AI search visibility improvements typically follow within 1-3 months as AI models incorporate new Reddit data into their responses. Consistent, authentic participation drives the best long-term results."
-  },
-  {
-    question: "Will my posts get removed or account banned?",
-    answer: "Our team follows all Reddit guidelines and subreddit rules meticulously. We focus on providing genuine value to communities rather than spammy promotion. Our approach has a 99%+ success rate with no bans or significant post removals."
   }
 ];
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
+  // FAQ Schema for SEO and AI search
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <section id="faq" className="py-20 bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -83,11 +97,13 @@ export default function FAQ() {
           <h3 className="text-xl font-semibold text-gray-900 mb-2">Still have questions?</h3>
           <p className="text-gray-600 mb-4">Can&apos;t find the answer you&apos;re looking for? Reach out to our team.</p>
           <a
-            href="#contact"
-            className="inline-flex items-center gap-2 text-[#ff4500] font-semibold hover:underline"
+            href="https://calendly.com/kirkco/chat"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-[#ff4500] font-semibold hover:underline focus:outline-none focus:ring-2 focus:ring-[#ff4500] focus:ring-offset-2 rounded"
           >
             Contact us
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
