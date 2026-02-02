@@ -8,6 +8,17 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Blog | ReddiReach',
   description: 'Insights on Reddit marketing, AI search optimization, and GEO strategies for startups and small businesses.',
+  openGraph: {
+    title: 'Blog | ReddiReach',
+    description: 'Insights on Reddit marketing, AI search optimization, and GEO strategies for startups and small businesses.',
+    type: 'website',
+    url: 'https://reddireach.com/blog',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog | ReddiReach',
+    description: 'Insights on Reddit marketing, AI search optimization, and GEO strategies for startups and small businesses.',
+  },
 }
 
 type Post = {

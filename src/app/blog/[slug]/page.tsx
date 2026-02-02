@@ -388,7 +388,7 @@ export default async function BlogPostPage({
     publisher: {
       '@type': 'Organization',
       name: 'ReddiReach',
-      url: 'https://reddireach.io',
+      url: 'https://reddireach.com',
     },
     ...(post.mainImage && {
       image: urlFor(post.mainImage).width(1200).height(630).url(),
