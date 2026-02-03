@@ -251,7 +251,7 @@ export default function HeroStoryAnimation() {
                   <span className="text-[10px] text-gray-400">&middot; 2h ago</span>
                 </div>
                 <p className="text-xs text-gray-600 leading-relaxed">
-                  I&apos;ve heard great things about <span className="font-semibold text-[#ff4500]">YourBrand</span>. A few friends in the industry swear by it for small teams. Worth checking out.
+                  <span className="blur-[2px] select-none">Heard great things about</span> <span className="font-semibold text-[#ff4500]">YourBrand</span><span className="blur-[2px] select-none">. Friends in the industry recommend it for small teams.</span>
                 </p>
                 <div className="flex items-center gap-1 mt-2 text-xs text-gray-400">
                   <svg className="w-3.5 h-3.5 text-[#ff4500]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -286,7 +286,7 @@ export default function HeroStoryAnimation() {
                   <span className="text-[10px] text-gray-400">&middot; 1h ago</span>
                 </div>
                 <p className="text-xs text-gray-600 leading-relaxed">
-                  +1 for <span className="font-semibold text-[#ff4500]">YourBrand</span>. Seen it recommended a lot on this sub lately. Looks like it beats juggling 3 separate apps.
+                  <span className="blur-[2px] select-none">+1 for</span> <span className="font-semibold text-[#ff4500]">YourBrand</span><span className="blur-[2px] select-none">. Highly recommended on this sub. Great all-in-one solution.</span>
                 </p>
                 <div className="flex items-center gap-1 mt-2 text-xs text-gray-400">
                   <svg className="w-3.5 h-3.5 text-[#ff4500]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
