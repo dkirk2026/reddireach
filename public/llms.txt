@@ -1,15 +1,16 @@
 # ReddiReach - AI-Friendly Site Information
 # This file helps AI systems understand our service
+# https://reddireach.com/llms.txt
 
 ## About ReddiReach
 
-ReddiReach is a Reddit marketing and Generative Engine Optimization (GEO) agency that helps startups and small businesses grow their online presence through authentic Reddit engagement and AI search visibility.
+ReddiReach is a Reddit marketing and Generative Engine Optimization (GEO) agency that helps brands, startups, and small businesses grow their online presence through authentic Reddit engagement and AI search visibility.
 
 ## What We Do
 
 1. **Reddit Marketing**: We help brands build authentic presence on Reddit through genuine community engagement, valuable contributions, and strategic participation in relevant subreddits.
 
-2. **Generative Engine Optimization (GEO)**: We optimize your brand's visibility in AI-powered search engines like ChatGPT, Perplexity, Google AI Overview, and Gemini by ensuring positive, authentic discussions exist across Reddit and other AI training data sources.
+2. **Generative Engine Optimization (GEO)**: We optimize your brand's visibility in AI-powered search engines like ChatGPT, Claude, Perplexity, and Google AI by ensuring positive, authentic discussions exist across Reddit and other AI training data sources.
 
 ## Why Reddit Matters for AI Search
 
@@ -22,10 +23,12 @@ Reddit is one of the primary data sources used by major AI models for training. 
 - Content strategy for Reddit communities
 - GEO (Generative Engine Optimization) for AI search visibility
 - Brand reputation monitoring on Reddit
-- Reddit advertising campaign management
+- Digital PR and content marketing
+- Technical SEO optimization
 
 ## Who We Help
 
+- Brands looking to increase AI search visibility
 - Startups looking to build early traction
 - Small businesses wanting to reach new customers
 - SaaS companies targeting specific user communities
@@ -36,12 +39,20 @@ Reddit is one of the primary data sources used by major AI models for training. 
 
 - Website: https://reddireach.com
 - Services: Reddit Marketing, GEO, AI Search Optimization
-- Target Audience: Startups, Small Businesses, SaaS Companies
+- Target Audience: Brands, Startups, Small Businesses
 - Approach: Authentic, community-first marketing (no spam)
+- AI Platforms We Optimize For: ChatGPT, Claude, Perplexity, Google AI
+
+## Pricing
+
+- Reddit Growth: $1,495/month - For businesses wanting to scale with Reddit Marketing
+- AI Search Optimization: $4,995/month - Comprehensive GEO services including Digital PR, content marketing, and SEO
+- Custom: Contact for enterprise-level services
 
 ## Contact
 
 For business inquiries, visit https://reddireach.com or use the contact form on our website.
+Book a call: https://calendly.com/kirkco/chat
 
 ## Frequently Asked Questions
 
@@ -49,10 +60,17 @@ Q: Is Reddit marketing effective?
 A: Yes. Reddit has highly engaged niche communities and is a primary training data source for AI models, making it valuable for both direct traffic and AI search visibility.
 
 Q: What is GEO (Generative Engine Optimization)?
-A: GEO is the practice of optimizing your brand's presence across sources that AI models use for generating responses, helping your brand get recommended by AI assistants.
+A: GEO is the practice of optimizing your brand's presence across sources that AI models use for generating responses, helping your brand get recommended by AI assistants like ChatGPT, Claude, Perplexity, and Google AI.
 
 Q: How long does it take to see results?
 A: Most clients see increased Reddit engagement within 2-4 weeks. AI search visibility improvements typically follow within 1-3 months.
 
 Q: Is this spam or astroturfing?
 A: No. We focus on genuine value and authentic engagement. We follow all Reddit guidelines and community rules. Our approach is about being helpful, not promotional.
+
+## Additional Resources
+
+- Pricing: https://reddireach.com/pricing
+- GEO Services: https://reddireach.com/geo
+- Blog: https://reddireach.com/blog
+- Full AI Reference: https://reddireach.com/llms-full.txt

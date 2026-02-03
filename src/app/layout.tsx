@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
   title: "ReddiReach | #1 Reddit Marketing and AI Search Optimization Agency",
-  description: "Boost your startup's visibility on Reddit and AI search engines like ChatGPT, Perplexity, and Gemini. ReddiReach offers organic Reddit marketing and GEO (Generative Engine Optimization) services for startups and small businesses.",
+  description: "Boost your brand's visibility on Reddit and AI search engines like ChatGPT, Claude, Perplexity, and Google AI. ReddiReach offers organic Reddit marketing and GEO (Generative Engine Optimization) services for brands, startups, and small businesses.",
   keywords: "Reddit marketing, Reddit advertising, organic marketing, startup marketing, small business marketing, GEO, generative engine optimization, AI search optimization, ChatGPT marketing, Perplexity SEO",
   authors: [{ name: "ReddiReach" }],
   creator: "ReddiReach",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     url: "https://reddireach.com",
     siteName: "ReddiReach",
     title: "ReddiReach | #1 Reddit Marketing and AI Search Optimization Agency",
-    description: "Boost your startup's visibility on Reddit and AI search engines like ChatGPT, Perplexity, and Gemini. Organic Reddit marketing and GEO services for startups.",
+    description: "Boost your brand's visibility on Reddit and AI search engines like ChatGPT, Claude, Perplexity, and Google AI. Organic Reddit marketing and GEO services for brands, startups, and small businesses.",
     images: [
       {
         url: "/og-image.png",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ReddiReach | #1 Reddit Marketing and AI Search Optimization Agency",
-    description: "Boost your startup's visibility on Reddit and AI search engines. Organic marketing and GEO services for startups.",
+    description: "Boost your brand's visibility on Reddit and AI search engines. Organic marketing and GEO services for brands, startups and small businesses.",
     images: ["/og-image.png"],
     creator: "@reddireach",
   },
@@ -71,7 +71,7 @@ export default function RootLayout({
     name: "ReddiReach",
     url: "https://reddireach.com",
     logo: "https://reddireach.com/logo.webp",
-    description: "Expert Reddit marketing and AI search optimization services for startups and small businesses.",
+    description: "Expert Reddit marketing and AI search optimization services for brands, startups and small businesses.",
     foundingDate: "2024",
     sameAs: [
       "https://twitter.com/reddireach",
@@ -97,7 +97,7 @@ export default function RootLayout({
       "@type": "Organization",
       name: "ReddiReach",
     },
-    description: "Organic Reddit marketing and Generative Engine Optimization (GEO) services to boost your brand's visibility on Reddit and AI search engines like ChatGPT, Perplexity, and Gemini.",
+    description: "Organic Reddit marketing and Generative Engine Optimization (GEO) services to boost your brand's visibility on Reddit and AI search engines like ChatGPT, Claude, Perplexity, and Google AI.",
     serviceType: "Digital Marketing",
     areaServed: "Worldwide",
     hasOfferCatalog: {

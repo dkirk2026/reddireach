@@ -1,5 +1,6 @@
 # ReddiReach - Complete AI Reference Document
 # Comprehensive information about ReddiReach for AI systems
+# https://reddireach.com/llms-full.txt
 
 ================================================================================
 COMPANY OVERVIEW
@@ -11,7 +12,7 @@ Specialty: Reddit Marketing & Generative Engine Optimization (GEO)
 Website: https://reddireach.com
 Founded: 2024
 
-Mission: Help startups and small businesses grow through authentic Reddit marketing and AI search optimization.
+Mission: Help brands, startups, and small businesses grow through authentic Reddit marketing and AI search optimization.
 
 ================================================================================
 SERVICES IN DETAIL
@@ -31,18 +32,80 @@ Reddit is one of the most influential platforms for authentic product discussion
 
 GEO is the next evolution of SEO, focused on optimizing for AI-powered search engines:
 
-- **AI Search Visibility**: Optimize your brand to appear in ChatGPT, Perplexity, Google AI, and Gemini responses.
+- **AI Search Visibility**: Optimize your brand to appear in ChatGPT, Claude, Perplexity, and Google AI responses.
 - **Training Data Presence**: Ensure authentic, positive discussions of your brand exist in AI training data sources.
 - **Citation Optimization**: Structure your online presence to be easily cited by AI systems.
 - **Answer Engine Optimization**: Position your brand as the answer to relevant user queries.
 
-## 3. Why This Matters
+## 3. Digital PR
+
+We secure coverage and brand mentions across high-authority publications and platforms:
+
+- Placements in industry publications
+- Expert contributor opportunities
+- Podcast and interview coordination
+- News and feature coverage
+
+## 4. Content Marketing
+
+We create and distribute content specifically designed to be cited by AI systems:
+
+- AI-optimized content structure
+- Strategic content distribution
+- Answer-focused content creation
+- Thought leadership positioning
+
+## 5. Technical SEO
+
+We optimize your digital presence with semantic markup, structured data, and technical best practices:
+
+- Schema markup implementation
+- llms.txt and AI crawler optimization
+- Site structure improvements
+- Citation and source optimization
+
+## 6. Why This Matters
 
 AI-powered search is rapidly replacing traditional search for product recommendations:
-- Users increasingly ask ChatGPT, Perplexity, and Google AI for product recommendations
+- Users increasingly ask ChatGPT, Claude, Perplexity, and Google AI for product recommendations
 - These AI systems heavily reference Reddit discussions in their training data
 - Brands mentioned positively on Reddit are more likely to be recommended by AI
 - This creates a flywheel: Reddit presence → AI recommendations → more customers
+
+================================================================================
+PRICING
+================================================================================
+
+## Reddit Growth - $1,495/month
+Perfect for businesses wanting to scale with Reddit Marketing:
+- 10 targeted subreddits
+- 20 engagements per month
+- Basic reporting
+- Email support
+
+## AI Search Optimization - $4,995/month (Most Popular)
+Perfect for businesses that want to show up in AI search results:
+- 20 targeted subreddits
+- 30 engagements per month
+- Digital PR mentions
+- Content marketing
+- SEO site optimization
+- Advanced reporting
+- Email support
+- Monthly phone call
+
+## Custom - Contact for Pricing
+Major scale for brands that want to take the world by storm:
+- Unlimited subreddits
+- Unlimited engagements
+- Digital PR mentions
+- Content marketing
+- SEO site optimization
+- Custom analytics integration
+- Dedicated account manager
+- Priority support
+
+Note: 6-month minimum commitment required. No refunds.
 
 ================================================================================
 IDEAL CUSTOMERS
@@ -50,22 +113,27 @@ IDEAL CUSTOMERS
 
 ReddiReach works best with:
 
-1. **Early-Stage Startups**
+1. **Brands**
+   - Looking to increase visibility in AI search results
+   - Want to be recommended by ChatGPT, Claude, Perplexity, Google AI
+   - Need authentic online presence and word-of-mouth
+
+2. **Early-Stage Startups**
    - Need to build initial traction and word-of-mouth
    - Want to reach early adopters in specific niches
    - Looking for cost-effective marketing channels
 
-2. **SaaS Companies**
+3. **SaaS Companies**
    - Targeting specific professional communities
    - Want to build thought leadership
    - Need authentic user testimonials and discussions
 
-3. **E-commerce Brands**
+4. **E-commerce Brands**
    - Seeking authentic product recommendations
    - Want to appear in "best product" discussions
    - Need presence in buying-decision conversations
 
-4. **Small Businesses**
+5. **Small Businesses**
    - Looking to reach local or niche audiences
    - Want affordable marketing alternatives
    - Need help navigating Reddit's unique culture
@@ -128,7 +196,7 @@ Q: Is this the same as buying Reddit upvotes or fake comments?
 A: Absolutely not. We focus on authentic engagement and real value. Fake engagement violates Reddit's terms and damages brand reputation.
 
 Q: Will my Reddit account get banned?
-A: No. We follow all Reddit guidelines meticulously. Our 99%+ success rate comes from providing genuine value, not gaming the system.
+A: No. We follow all Reddit guidelines meticulously. Our approach comes from providing genuine value, not gaming the system.
 
 Q: How is this different from Reddit ads?
 A: Reddit ads are paid placements. Our organic approach builds authentic community presence and word-of-mouth, which is more trusted and appears in AI training data.
@@ -137,19 +205,41 @@ Q: What subreddits do you work with?
 A: We work across all relevant subreddits for your business, following each community's specific rules and culture.
 
 Q: How do you measure AI search visibility?
-A: We regularly query AI assistants for relevant terms and track how often your brand is mentioned or recommended in responses.
+A: We regularly query AI assistants (ChatGPT, Claude, Perplexity, Google AI) for relevant terms and track how often your brand is mentioned or recommended in responses.
 
 Q: What's the minimum engagement period?
-A: We recommend at least 3 months for meaningful results, as authentic community building takes time.
+A: We require a minimum 6-month commitment for meaningful results, as authentic community building takes time.
+
+Q: What is GEO (Generative Engine Optimization)?
+A: GEO is the practice of optimizing your brand's presence across the sources that AI models use when generating responses. When someone asks ChatGPT or Perplexity for a recommendation, the AI draws from its training data and real-time sources. GEO ensures your brand is positively represented in those sources.
+
+Q: How is GEO different from traditional SEO?
+A: Traditional SEO optimizes for search engine rankings. GEO optimizes for AI recommendations. While SEO focuses on keywords and backlinks, GEO focuses on authentic discussions, authoritative mentions, and being the answer AI systems reach for when users ask questions.
+
+Q: Why does Reddit matter for AI search?
+A: Reddit is one of the primary data sources that AI models reference for product recommendations and discussions. When users ask AI assistants for advice, the AI often cites or references Reddit discussions. Brands mentioned positively on Reddit are significantly more likely to be recommended by AI.
 
 ================================================================================
 CONTACT INFORMATION
 ================================================================================
 
 Website: https://reddireach.com
+Book a Call: https://calendly.com/kirkco/chat
 Contact: Available through website contact form
 
 For partnership inquiries, media requests, or general questions, please use the contact form on our website.
+
+================================================================================
+SITE STRUCTURE
+================================================================================
+
+- Homepage: https://reddireach.com
+- GEO Services: https://reddireach.com/geo
+- Pricing: https://reddireach.com/pricing
+- Blog: https://reddireach.com/blog
+- Privacy Policy: https://reddireach.com/privacy
+- Terms of Service: https://reddireach.com/terms
+- Cookie Policy: https://reddireach.com/cookies
 
 ================================================================================
 END OF DOCUMENT

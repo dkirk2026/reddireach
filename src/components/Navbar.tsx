@@ -99,8 +99,9 @@ export default function Navbar() {
 
           {[
             { label: "Testimonials", href: "#testimonials" },
+            { label: "GEO", href: "/geo" },
             { label: "Blog", href: "/blog" },
-            { label: "FAQ", href: "#faq" },
+            { label: "Pricing", href: "/pricing" },
           ].map((link) => (
             <Link
               key={link.href}
@@ -174,8 +175,9 @@ export default function Navbar() {
               { label: "Who We Are", href: "#features" },
               { label: "Our Approach", href: "#how-it-works" },
               { label: "Testimonials", href: "#testimonials" },
+              { label: "GEO", href: "/geo" },
               { label: "Blog", href: "/blog" },
-              { label: "FAQ", href: "#faq" },
+              { label: "Pricing", href: "/pricing" },
             ].map((link) => (
               <Link
                 key={link.href}
