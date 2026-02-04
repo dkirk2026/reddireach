@@ -91,37 +91,17 @@ export default function RootLayout({
   // Service Schema
   const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Reddit Marketing & GEO Services",
+    "@type": "ProfessionalService",
+    name: "ReddiReach",
+    description: "Reddit marketing and Generative Engine Optimization (GEO) services to boost your brand visibility on Reddit and AI search engines like ChatGPT, Claude, Perplexity, and Google AI.",
     provider: {
       "@type": "Organization",
       name: "ReddiReach",
+      url: "https://reddireach.com",
     },
-    description: "Organic Reddit marketing and Generative Engine Optimization (GEO) services to boost your brand's visibility on Reddit and AI search engines like ChatGPT, Claude, Perplexity, and Google AI.",
-    serviceType: "Digital Marketing",
+    serviceType: ["Digital Marketing", "Reddit Marketing", "AI Search Optimization"],
     areaServed: "Worldwide",
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Reddit Marketing Services",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Reddit Marketing",
-            description: "Authentic engagement and brand mentions across relevant subreddits",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "GEO - Generative Engine Optimization",
-            description: "Optimize your brand's presence for AI search engines like ChatGPT and Perplexity",
-          },
-        },
-      ],
-    },
+    url: "https://reddireach.com",
   };
 
   return (
