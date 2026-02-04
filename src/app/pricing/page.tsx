@@ -137,40 +137,6 @@ export default function PricingPage() {
     })),
   };
 
-  // Pricing/Product Schema for SEO
-  const pricingSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: "ReddiReach Marketing Services",
-    description: "Reddit marketing and AI search optimization services for brands, startups, and small businesses",
-    brand: {
-      "@type": "Brand",
-      name: "ReddiReach",
-    },
-    offers: [
-      {
-        "@type": "Offer",
-        name: "Reddit Growth",
-        description: "Reddit marketing services including 10 targeted subreddits and 20 engagements per month",
-        price: "1495",
-        priceCurrency: "USD",
-        priceValidUntil: "2026-12-31",
-        availability: "https://schema.org/InStock",
-        url: "https://reddireach.com/pricing",
-      },
-      {
-        "@type": "Offer",
-        name: "AI Search Optimization",
-        description: "Comprehensive GEO services including Reddit marketing, Digital PR, content marketing, and SEO optimization",
-        price: "4995",
-        priceCurrency: "USD",
-        priceValidUntil: "2026-12-31",
-        availability: "https://schema.org/InStock",
-        url: "https://reddireach.com/pricing",
-      },
-    ],
-  };
-
   return (
     <>
       <Navbar />
@@ -179,10 +145,6 @@ export default function PricingPage() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }}
         />
 
         {/* Hero Section */}
