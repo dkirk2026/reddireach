@@ -30,7 +30,7 @@ export default function Footer() {
               <Image src="/logo.webp" alt="ReddiReach" width={160} height={56} className="h-14 w-auto invert" />
             </Link>
             <p className="text-gray-400 mb-6 max-w-xs">
-              The leading Reddit marketing agency for startups and small businesses. Grow organically on Reddit.
+              The leading Reddit marketing and AI search optimization agency for brands, startups and small businesses.
             </p>
             {/* Social Links */}
             <div className="flex gap-4" role="list" aria-label="Social media links">
