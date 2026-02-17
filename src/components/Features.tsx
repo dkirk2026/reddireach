@@ -9,7 +9,7 @@ export default function Features() {
             Professional Marketing Consultants
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed">
-            Professional marketing consultants and experts with years of experience. We've provided marketing services for more than 500 companies to date.
+            We&apos;ve helped 500+ companies get discovered through Reddit and AI search. Here&apos;s what makes us different.
           </p>
         </div>
 

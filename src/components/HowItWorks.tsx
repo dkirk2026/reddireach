@@ -2,7 +2,7 @@ const steps = [
   {
     number: "01",
     title: "Understand GEO Insights",
-    description: "We analyze GEO insights about your brand and competitors to understand where you stand in AI search results.",
+    description: "We analyze where your brand stands in AI search results vs. competitors.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -23,7 +23,7 @@ const steps = [
   {
     number: "03",
     title: "Run Organic Reddit Marketing",
-    description: "We execute authentic, organic marketing campaigns on Reddit that build genuine brand trust and community engagement.",
+    description: "We run authentic Reddit campaigns that build real trust in your brand.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />

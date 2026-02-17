@@ -13,7 +13,7 @@ const pillars = [
   {
     title: "Reddit Marketing",
     description:
-      "We secure authoritative brand mentions across the sources AI models trust most, building the digital footprint that drives AI visibility.",
+      "Get your brand mentioned in the communities and sources that AI models pull from.",
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -23,7 +23,7 @@ const pillars = [
   {
     title: "Digital PR",
     description:
-      "We secure coverage and brand mentions across high-authority publications and platforms that AI models trust as sources. This builds the credibility that drives AI recommendations.",
+      "Get featured in high-authority publications that AI models trust. More credible sources means more AI recommendations.",
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
@@ -33,7 +33,7 @@ const pillars = [
   {
     title: "Content Marketing",
     description:
-      "We create and distribute content specifically designed to be cited by AI systems. Strategic content placement ensures your brand becomes the answer AI reaches for.",
+      "Content designed to be cited by AI systems, placed where it matters so your brand becomes the answer.",
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -43,7 +43,7 @@ const pillars = [
   {
     title: "SEO",
     description:
-      "We optimize your digital presence with semantic markup, structured data, and technical best practices. This helps AI models understand, index, and recommend your brand.",
+      "Semantic markup, structured data, and technical best practices that help AI models understand and recommend your brand.",
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -233,7 +233,7 @@ export default function AISearchOptimization() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 bg-[#ff4500] hover:bg-[#cc3700] text-white rounded-full font-semibold text-base transition-all hover:-translate-y-0.5 shadow-lg shadow-[#ff4500]/20 focus:outline-none focus:ring-2 focus:ring-[#ff4500] focus:ring-offset-2 focus:ring-offset-gray-900"
           >
-            Let&apos;s Chat
+            Book a Free Consultation
             <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

@@ -25,7 +25,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg text-gray-500 leading-relaxed max-w-lg">
-              Our marketing agency specializes in getting your brand recommended by AI using Reddit and GEO.
+              We get your brand mentioned on Reddit so ChatGPT, Perplexity, and Google AI recommend you to customers.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -35,7 +35,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-7 py-3.5 bg-[#ff4500] hover:bg-[#cc3700] text-white rounded-full font-semibold text-base transition-all hover:-translate-y-0.5 shadow-md shadow-orange-200/40 focus:outline-none focus:ring-2 focus:ring-[#ff4500] focus:ring-offset-2"
               >
-                Let&apos;s Chat
+                Book a Free Consultation
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

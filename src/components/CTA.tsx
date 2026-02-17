@@ -5,25 +5,21 @@ export default function CTA() {
         <div className="max-w-3xl mx-auto text-center">
           {/* Content */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Want to Expand your Business through AI Search and Reddit Marketing?
+            Get AI to recommend your brand
           </h2>
-          <p className="text-lg md:text-xl text-orange-100 mb-4">
-            Join the 500+ companies we&apos;ve provided consulting and marketing services for.
-          </p>
-          <p className="text-xl md:text-2xl font-semibold text-white mb-10">
-            Get your brand recommended by AI today!
+          <p className="text-lg md:text-xl text-orange-100 mb-10">
+            Book a free call. We&apos;ll show you exactly which subreddits and AI models matter for your niche.
           </p>
 
           {/* Calendly CTA */}
           <div className="space-y-6">
-            <p className="text-orange-100 text-lg">Grab a time to chat here:</p>
             <a
               href="https://calendly.com/kirkco/chat"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-10 py-5 bg-white text-[#ff4500] rounded-full font-bold text-xl hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#ff4500]"
             >
-              Let&apos;s Chat
+              Book a Free Consultation
               <svg className="ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

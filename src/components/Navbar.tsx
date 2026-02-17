@@ -124,7 +124,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="ml-2 bg-[#ff4500] hover:bg-[#cc3700] text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:shadow-lg hover:shadow-orange-200/50"
           >
-            Let&apos;s Chat
+            Free Consultation
           </a>
         </div>
 
@@ -200,7 +200,7 @@ export default function Navbar() {
                 className="block bg-[#ff4500] hover:bg-[#cc3700] text-white px-4 py-3 rounded-xl font-semibold transition-colors text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Let&apos;s Chat
+                Free Consultation
               </a>
             </div>
           </div>
