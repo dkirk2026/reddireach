@@ -26,7 +26,16 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem('category').title('Categories'),
       S.documentTypeListItem('author').title('Authors'),
       S.divider(),
+      S.listItem()
+        .title('Leads')
+        .schemaType('lead')
+        .child(
+          S.documentTypeList('lead')
+            .title('Leads')
+            .defaultOrdering([{field: 'submittedAt', direction: 'desc'}])
+        ),
+      S.divider(),
       ...S.documentTypeListItems().filter(
-        (item) => item.getId() && !['post', 'category', 'author'].includes(item.getId()!),
+        (item) => item.getId() && !['post', 'category', 'author', 'lead'].includes(item.getId()!),
       ),
     ])

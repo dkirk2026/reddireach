@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HeroStoryAnimation from "./HeroStoryAnimation";
+import ScoreChecker from "./ScoreChecker";
 
 export default function Hero() {
   return (
@@ -28,18 +29,9 @@ export default function Hero() {
               We get your brand mentioned on Reddit so ChatGPT, Perplexity, and Google AI recommend you to customers.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://calendly.com/kirkco/chat"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-7 py-3.5 bg-[#ff4500] hover:bg-[#cc3700] text-white rounded-full font-semibold text-base transition-all hover:-translate-y-0.5 shadow-md shadow-orange-200/40 focus:outline-none focus:ring-2 focus:ring-[#ff4500] focus:ring-offset-2"
-              >
-                Book a Free Consultation
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
+            <ScoreChecker />
+
+            <div className="flex">
               <Link
                 href="#how-it-works"
                 className="inline-flex items-center justify-center px-7 py-3.5 border-2 border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 rounded-full font-semibold text-base transition-all focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
