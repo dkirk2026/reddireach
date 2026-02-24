@@ -237,6 +237,16 @@ export default function ScoreChecker() {
             : "There's room to improve. See exactly what AI sees (and misses) about your brand."}
         </p>
 
+        <a
+          href="/checklist"
+          className="inline-flex items-center text-sm font-medium text-[#ff4500] hover:text-[#cc3700] transition-colors"
+        >
+          See how to improve
+          <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+
         <div className="flex flex-col sm:flex-row gap-3">
           <a
             href="https://calendly.com/kirkco/chat"
