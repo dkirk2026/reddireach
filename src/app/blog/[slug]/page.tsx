@@ -55,11 +55,9 @@ export async function generateMetadata({
   return {
     title: `${title} | ReddiReach Blog`,
     description,
-    ...(post.canonicalUrl && {
-      alternates: {
-        canonical: post.canonicalUrl,
-      },
-    }),
+    alternates: {
+      canonical: post.canonicalUrl || `https://reddireach.com/blog/${slug}`,
+    },
     openGraph: {
       title,
       description,

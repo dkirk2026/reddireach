@@ -8,6 +8,9 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Blog | ReddiReach',
   description: 'Insights on Reddit marketing, AI search optimization, and GEO strategies for brands, startups and small businesses.',
+  alternates: {
+    canonical: 'https://reddireach.com/blog',
+  },
   openGraph: {
     title: 'Blog | ReddiReach',
     description: 'Insights on Reddit marketing, AI search optimization, and GEO strategies for brands, startups and small businesses.',

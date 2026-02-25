@@ -4,6 +4,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Cookie Policy | ReddiReach",
   description: "ReddiReach Cookie Policy - Learn about how we use cookies and similar technologies.",
+  alternates: {
+    canonical: "https://reddireach.com/cookies",
+  },
 };
 
 export default function CookiePolicy() {

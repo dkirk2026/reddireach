@@ -4,6 +4,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | ReddiReach",
   description: "ReddiReach Privacy Policy - Learn how we collect, use, and protect your personal information.",
+  alternates: {
+    canonical: "https://reddireach.com/privacy",
+  },
 };
 
 export default function PrivacyPolicy() {

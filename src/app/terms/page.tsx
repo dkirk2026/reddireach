@@ -4,6 +4,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service | ReddiReach",
   description: "ReddiReach Terms of Service - The terms and conditions governing your use of our services.",
+  alternates: {
+    canonical: "https://reddireach.com/terms",
+  },
 };
 
 export default function TermsOfService() {
