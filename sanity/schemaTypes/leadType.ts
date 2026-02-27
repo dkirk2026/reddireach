@@ -14,6 +14,11 @@ export const leadType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'email',
+      title: 'Email',
+      type: 'string',
+    }),
+    defineField({
       name: 'score',
       title: 'AI Visibility Score',
       type: 'number',
@@ -56,21 +61,24 @@ export const leadType = defineType({
   preview: {
     select: {
       website: 'website',
+      email: 'email',
       score: 'score',
       submittedAt: 'submittedAt',
     },
-    prepare({website, score, submittedAt}) {
+    prepare({website, email, score, submittedAt}) {
       let domain = website
       try {
         domain = new URL(website).hostname
       } catch {
         // use raw value
       }
+      const date = submittedAt
+        ? new Date(submittedAt).toLocaleDateString()
+        : 'No date'
+      const subtitle = email ? `${email} · ${date}` : date
       return {
         title: `${domain} — Score: ${score}/10`,
-        subtitle: submittedAt
-          ? new Date(submittedAt).toLocaleDateString()
-          : 'No date',
+        subtitle,
       }
     },
   },
