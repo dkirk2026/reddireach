@@ -159,6 +159,8 @@ export default function ScoreChecker() {
   const [result, setResult] = useState<ScoreResult | null>(null);
   const [pendingResult, setPendingResult] = useState<ScoreResult | null>(null);
   const [error, setError] = useState("");
+  const [email, setEmail] = useState("");
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
 
   const showResult = useCallback(() => {
     if (pendingResult) {
@@ -237,15 +239,46 @@ export default function ScoreChecker() {
             : "There's room to improve. See exactly what AI sees (and misses) about your brand."}
         </p>
 
-        <a
-          href="/checklist"
-          className="inline-flex items-center text-sm font-medium text-[#ff4500] hover:text-[#cc3700] transition-colors"
-        >
-          See how to improve
-          <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
+        {!emailSubmitted ? (
+          <div className="space-y-3 pt-1">
+            <p className="text-sm font-medium text-gray-700">
+              Want our full AI search optimization checklist?
+            </p>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (!email.trim()) return;
+                setEmailSubmitted(true);
+                // Fire-and-forget email capture
+                fetch("/api/score", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ email: email.trim(), website }),
+                }).catch(() => {});
+                window.location.href = "/checklist";
+              }}
+              className="flex flex-col sm:flex-row gap-3"
+            >
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                required
+                className="flex-1 px-5 py-3 border-2 border-gray-200 rounded-full text-base text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#ff4500] focus:ring-2 focus:ring-[#ff4500]/20 transition-all"
+              />
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center px-7 py-3 bg-[#ff4500] hover:bg-[#cc3700] text-white rounded-full font-semibold text-base transition-all hover:-translate-y-0.5 shadow-md shadow-orange-200/40 focus:outline-none focus:ring-2 focus:ring-[#ff4500] focus:ring-offset-2 whitespace-nowrap"
+              >
+                Get the Checklist
+              </button>
+            </form>
+            <p className="text-xs text-gray-400">
+              No newsletter, no spam. Just the checklist.
+            </p>
+          </div>
+        ) : null}
 
         <div className="flex flex-col sm:flex-row gap-3">
           <a
@@ -274,6 +307,8 @@ export default function ScoreChecker() {
             onClick={() => {
               setResult(null);
               setWebsite("");
+              setEmail("");
+              setEmailSubmitted(false);
             }}
             className="inline-flex items-center justify-center px-7 py-3.5 border-2 border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 rounded-full font-semibold text-base transition-all focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
           >

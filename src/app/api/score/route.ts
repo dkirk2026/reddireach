@@ -104,7 +104,35 @@ function scoreDomain(url: string) {
 
 export async function POST(request: Request) {
   try {
-    const { website } = await request.json();
+    const body = await request.json();
+    const { website, email } = body;
+
+    // Email capture: find the most recent lead for this website and add the email
+    if (email && website) {
+      if (process.env.SANITY_API_WRITE_TOKEN) {
+        let normalizedUrl = website.trim();
+        if (!/^https?:\/\//i.test(normalizedUrl)) {
+          normalizedUrl = `https://${normalizedUrl}`;
+        }
+        // Find the most recent lead for this website and patch with email
+        const existingLead = await client.fetch(
+          `*[_type == "lead" && website == $website] | order(submittedAt desc)[0]._id`,
+          { website: normalizedUrl }
+        );
+        if (existingLead) {
+          await client.patch(existingLead).set({ email: email.trim() }).commit();
+        } else {
+          // No existing lead found — create a new one with email
+          await client.create({
+            _type: "lead",
+            website: normalizedUrl,
+            email: email.trim(),
+            submittedAt: new Date().toISOString(),
+          });
+        }
+      }
+      return NextResponse.json({ ok: true });
+    }
 
     if (!website || typeof website !== "string") {
       return NextResponse.json(
