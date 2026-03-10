@@ -543,6 +543,13 @@ export default function ChecklistClient() {
               Learn About Our GEO Service
             </Link>
           </div>
+          <p className="text-gray-500 mt-4 text-sm">
+            See our{" "}
+            <Link href="/pricing" className="text-[#ff4500] hover:underline">
+              pricing plans
+            </Link>{" "}
+            to find the right fit for your business.
+          </p>
         </div>
       </section>
     </main>

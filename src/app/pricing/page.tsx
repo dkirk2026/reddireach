@@ -362,27 +362,37 @@ export default function PricingPage() {
               Book a free strategy call to discuss your goals and find the right
               plan for your business.
             </p>
-            <a
-              href="https://calendly.com/kirkco/chat"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#ff4500] hover:bg-[#cc3700] text-white px-8 py-4 rounded-full font-semibold transition-colors"
-            >
-              Book a Free Call
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://calendly.com/kirkco/chat"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-[#ff4500] hover:bg-[#cc3700] text-white px-8 py-4 rounded-full font-semibold transition-colors"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </a>
+                Book a Free Call
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div className="flex flex-wrap gap-6 justify-center mt-6 text-sm">
+              <Link href="/geo" className="text-gray-400 hover:text-[#ff4500] transition-colors">
+                Learn about our GEO services
+              </Link>
+              <Link href="/checklist" className="text-gray-400 hover:text-[#ff4500] transition-colors">
+                Free AI SEO Checklist
+              </Link>
+            </div>
           </div>
         </section>
       </main>

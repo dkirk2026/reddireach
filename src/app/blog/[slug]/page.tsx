@@ -6,6 +6,8 @@ import { client } from '../../../../sanity/lib/client'
 import { urlFor } from '../../../../sanity/lib/image'
 import { postQuery, postSlugsQuery } from '../../../../sanity/lib/queries'
 import type { Metadata } from 'next'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 type Post = {
   _id: string
@@ -394,6 +396,8 @@ export default async function BlogPostPage({
   }
 
   return (
+    <>
+    <Navbar />
     <main id="main-content" className="min-h-screen bg-white">
       {/* Schema Markup */}
       <script
@@ -483,19 +487,34 @@ export default async function BlogPostPage({
           <p className="text-gray-600 mb-4">
             Let&apos;s discuss how we can help your business get recommended by AI.
           </p>
-          <a
-            href="https://calendly.com/kirkco/chat"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#ff4500] hover:bg-[#cc3700] text-white px-6 py-3 rounded-full font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-[#ff4500] focus:ring-offset-2"
-          >
-            Let&apos;s Chat
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
+            <a
+              href="https://calendly.com/kirkco/chat"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-[#ff4500] hover:bg-[#cc3700] text-white px-6 py-3 rounded-full font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-[#ff4500] focus:ring-offset-2"
+            >
+              Let&apos;s Chat
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+          <div className="flex flex-wrap gap-4 justify-center text-sm">
+            <Link href="/checklist" className="text-[#ff4500] hover:underline font-medium">
+              Free AI SEO Checklist
+            </Link>
+            <Link href="/geo" className="text-[#ff4500] hover:underline font-medium">
+              Our GEO Services
+            </Link>
+            <Link href="/pricing" className="text-[#ff4500] hover:underline font-medium">
+              View Pricing
+            </Link>
+          </div>
         </div>
       </div>
     </main>
+    <Footer />
+    </>
   )
 }

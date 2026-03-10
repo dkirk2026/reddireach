@@ -510,6 +510,13 @@ export default function GEOPage() {
                 View Pricing
               </Link>
             </div>
+            <p className="text-gray-500 mt-4 text-sm">
+              Or check out our{" "}
+              <Link href="/checklist" className="text-[#ff4500] hover:underline">
+                free AI SEO checklist
+              </Link>{" "}
+              to see what you can start optimizing today.
+            </p>
             <p className="text-gray-500 mt-6 text-sm">
               In partnership with{" "}
               <a

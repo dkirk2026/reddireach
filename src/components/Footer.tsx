@@ -7,6 +7,11 @@ const footerLinks = {
     { name: "Testimonials", href: "#testimonials" },
     { name: "FAQ", href: "#faq" }
   ],
+  services: [
+    { name: "Pricing", href: "/pricing" },
+    { name: "GEO Services", href: "/geo" },
+    { name: "AI SEO Checklist", href: "/checklist" },
+  ],
   company: [
     { name: "About Us", href: "#features" },
     { name: "Blog", href: "/blog" },
@@ -23,7 +28,7 @@ export default function Footer() {
   return (
     <footer role="contentinfo" aria-label="Site footer" className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
           {/* Brand */}
           <div className="col-span-2">
             <Link href="/" className="inline-block mb-4">
@@ -72,6 +77,19 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Our Work</h3>
             <ul className="space-y-3">
               {footerLinks.ourWork.map((link, index) => (
+                <li key={index}>
+                  <Link href={link.href} className="hover:text-[#ff4500] transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white font-semibold mb-4">Services</h3>
+            <ul className="space-y-3">
+              {footerLinks.services.map((link, index) => (
                 <li key={index}>
                   <Link href={link.href} className="hover:text-[#ff4500] transition-colors">
                     {link.name}

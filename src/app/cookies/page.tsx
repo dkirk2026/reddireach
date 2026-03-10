@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Cookie Policy | ReddiReach",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 
 export default function CookiePolicy() {
   return (
+    <>
+    <Navbar />
     <main id="main-content" className="min-h-screen bg-white">
       {/* Header */}
       <div className="bg-gray-50 border-b border-gray-200">
@@ -130,5 +134,7 @@ export default function CookiePolicy() {
         </section>
       </article>
     </main>
+    <Footer />
+    </>
   );
 }
