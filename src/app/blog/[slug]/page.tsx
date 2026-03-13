@@ -64,6 +64,7 @@ export async function generateMetadata({
       title,
       description,
       type: 'article',
+      url: `https://reddireach.com/blog/${slug}`,
       publishedTime: post.publishedAt,
       ...(post.author?.name && { authors: [post.author.name] }),
       images: post.mainImage

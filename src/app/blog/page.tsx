@@ -18,11 +18,13 @@ export const metadata: Metadata = {
     description: 'Insights on Reddit marketing, AI search optimization, and GEO strategies for brands, startups and small businesses.',
     type: 'website',
     url: 'https://reddireach.com/blog',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'ReddiReach Blog - Reddit Marketing & AI Search Optimization' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Blog | ReddiReach',
     description: 'Insights on Reddit marketing, AI search optimization, and GEO strategies for brands, startups and small businesses.',
+    images: ['/og-image.png'],
   },
 }
 
@@ -41,10 +43,27 @@ export const revalidate = 60
 export default async function BlogPage() {
   const posts: Post[] = await client.fetch(postsQuery)
 
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'ReddiReach Blog',
+    description: 'Insights on Reddit marketing, AI search optimization, and GEO strategies for brands, startups and small businesses.',
+    url: 'https://reddireach.com/blog',
+    publisher: {
+      '@type': 'Organization',
+      name: 'ReddiReach',
+      url: 'https://reddireach.com',
+    },
+  }
+
   return (
     <>
     <Navbar />
     <main id="main-content" className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
       {/* Header */}
       <div className="bg-gray-50 border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
