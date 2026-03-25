@@ -399,7 +399,7 @@ export default async function BlogPostPage({
   return (
     <>
     <Navbar />
-    <main id="main-content" className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white pt-20">
       {/* Schema Markup */}
       <script
         type="application/ld+json"
