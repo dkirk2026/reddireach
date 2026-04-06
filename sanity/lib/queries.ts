@@ -13,6 +13,24 @@ export const postsQuery = groq`
   }
 `
 
+// Get paginated posts
+export const paginatedPostsQuery = groq`
+  *[_type == "post" && defined(slug.current)] | order(publishedAt desc) [$start...$end] {
+    _id,
+    title,
+    slug,
+    excerpt,
+    mainImage,
+    publishedAt,
+    "category": categories[0]->title
+  }
+`
+
+// Get total post count
+export const postCountQuery = groq`
+  count(*[_type == "post" && defined(slug.current)])
+`
+
 // Get a single post by slug with all SEO fields and expanded related posts
 export const postQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
