@@ -8,13 +8,13 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Blog | ReddiReach',
+  title: 'Reddit Marketing & AI Search Blog | ReddiReach',
   description: 'Insights on Reddit marketing, AI search optimization, and GEO strategies for brands, startups and small businesses.',
   alternates: {
     canonical: 'https://reddireach.com/blog',
   },
   openGraph: {
-    title: 'Blog | ReddiReach',
+    title: 'Reddit Marketing & AI Search Blog | ReddiReach',
     description: 'Insights on Reddit marketing, AI search optimization, and GEO strategies for brands, startups and small businesses.',
     type: 'website',
     url: 'https://reddireach.com/blog',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog | ReddiReach',
+    title: 'Reddit Marketing & AI Search Blog | ReddiReach',
     description: 'Insights on Reddit marketing, AI search optimization, and GEO strategies for brands, startups and small businesses.',
     images: ['/og-image.png'],
   },

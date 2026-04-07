@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AI Search Optimization (GEO) | ReddiReach",
+  title: "Get Recommended by ChatGPT & Perplexity | GEO Services | ReddiReach",
   description:
-    "Get your brand recommended by ChatGPT, Claude, Perplexity, and Google AI. Generative Engine Optimization services for brands, startups, and small businesses.",
+    "79% of consumers use AI for product research. We put your brand in the answers. GEO services for brands, startups, and small businesses.",
   keywords:
     "GEO, generative engine optimization, AI search optimization, ChatGPT marketing, Claude AI, Perplexity SEO, Google AI, AI recommendations, LLM optimization, AI visibility",
   alternates: {
     canonical: "https://reddireach.com/geo",
   },
   openGraph: {
-    title: "AI Search Optimization (GEO) | ReddiReach",
+    title: "Get Recommended by ChatGPT & Perplexity | GEO Services | ReddiReach",
     description:
-      "Get your brand recommended by ChatGPT, Claude, Perplexity, and Google AI. Dominate AI-powered search with GEO services.",
+      "79% of consumers use AI for product research. We put your brand in the answers. GEO services for brands, startups, and small businesses.",
     type: "website",
     url: "https://reddireach.com/geo",
     images: [
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Search Optimization (GEO) | ReddiReach",
+    title: "Get Recommended by ChatGPT & Perplexity | GEO Services | ReddiReach",
     description:
-      "Get your brand recommended by ChatGPT, Claude, Perplexity, and Google AI. GEO services for brands, startups, and small businesses.",
+      "79% of consumers use AI for product research. We put your brand in the answers. GEO services for brands, startups, and small businesses.",
     images: ["/og-image.png"],
   },
 };

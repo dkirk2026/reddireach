@@ -4,14 +4,14 @@ import Footer from "@/components/Footer";
 import ChecklistClient from "./ChecklistClient";
 
 export const metadata: Metadata = {
-  title: "AI Search Optimization Checklist | ReddiReach",
+  title: "Free AI Search Checklist — 35 Steps to Get Recommended by AI | ReddiReach",
   description:
-    "35 actionable items to help your brand get discovered, cited, and recommended by AI search tools like ChatGPT, Claude, Perplexity, and Google AI.",
+    "Is your brand invisible to ChatGPT? Use this free 35-step checklist to get discovered, cited, and recommended by AI search tools.",
   alternates: {
     canonical: "https://reddireach.com/checklist",
   },
   openGraph: {
-    title: "AI Search Optimization Checklist | ReddiReach",
+    title: "Free AI Search Checklist — 35 Steps to Get Recommended by AI | ReddiReach",
     description:
       "35 actionable items to help your brand get discovered and recommended by AI search tools.",
     url: "https://reddireach.com/checklist",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Search Optimization Checklist | ReddiReach",
+    title: "Free AI Search Checklist — 35 Steps to Get Recommended by AI | ReddiReach",
     description:
       "35 actionable items to help your brand get discovered and recommended by AI search tools.",
     images: ["https://reddireach.com/og-checklist.png"],
@@ -39,7 +39,7 @@ const checklistSchema = {
   "@type": "HowTo",
   name: "AI Search Optimization Checklist",
   description:
-    "35 actionable items to help your brand get discovered, cited, and recommended by AI search tools like ChatGPT, Claude, Perplexity, and Google AI.",
+    "Is your brand invisible to ChatGPT? Use this free 35-step checklist to get discovered, cited, and recommended by AI search tools.",
   step: [
     {
       "@type": "HowToSection",

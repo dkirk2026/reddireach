@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Pricing | ReddiReach - Reddit Marketing & GEO Services",
+  title: "Reddit Marketing Pricing — From $1,495/mo | ReddiReach",
   description:
     "Transparent pricing for Reddit marketing and AI search optimization services. Reddit Growth from $1,495/month. AI Search Optimization from $4,995/month. Get your brand recommended by ChatGPT, Claude, Perplexity, and Google AI.",
   keywords:
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: "https://reddireach.com/pricing",
   },
   openGraph: {
-    title: "Pricing | ReddiReach - Reddit Marketing & GEO Services",
+    title: "Reddit Marketing Pricing — From $1,495/mo | ReddiReach",
     description:
       "Transparent pricing for Reddit marketing and AI search optimization. Reddit Growth from $1,495/month. AI Search Optimization from $4,995/month.",
     type: "website",

@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     icon: "/icon.png",
     apple: "/icon.png",
   },
-  title: "ReddiReach | #1 Reddit Marketing and AI Search Optimization Agency",
-  description: "Boost your brand's visibility on Reddit and AI search engines like ChatGPT, Claude, Perplexity, and Google AI. ReddiReach offers organic Reddit marketing and GEO (Generative Engine Optimization) services for brands, startups, and small businesses.",
+  title: "Reddit Marketing Agency That Gets You Recommended by AI | ReddiReach",
+  description: "We get your brand mentioned on Reddit so ChatGPT, Perplexity, and Google AI recommend you to customers. Trusted by 500+ brands.",
   keywords: "Reddit marketing, Reddit advertising, organic marketing, startup marketing, small business marketing, GEO, generative engine optimization, AI search optimization, ChatGPT marketing, Perplexity SEO",
   authors: [{ name: "ReddiReach" }],
   creator: "ReddiReach",
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://reddireach.com",
     siteName: "ReddiReach",
-    title: "ReddiReach | #1 Reddit Marketing and AI Search Optimization Agency",
-    description: "Boost your brand's visibility on Reddit and AI search engines like ChatGPT, Claude, Perplexity, and Google AI. Organic Reddit marketing and GEO services for brands, startups, and small businesses.",
+    title: "Reddit Marketing Agency That Gets You Recommended by AI | ReddiReach",
+    description: "We get your brand mentioned on Reddit so ChatGPT, Perplexity, and Google AI recommend you to customers. Trusted by 500+ brands.",
     images: [
       {
         url: "/og-image.png",
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ReddiReach | #1 Reddit Marketing and AI Search Optimization Agency",
-    description: "Boost your brand's visibility on Reddit and AI search engines. Organic marketing and GEO services for brands, startups and small businesses.",
+    title: "Reddit Marketing Agency That Gets You Recommended by AI | ReddiReach",
+    description: "We get your brand mentioned on Reddit so ChatGPT, Perplexity, and Google AI recommend you to customers. Trusted by 500+ brands.",
     images: ["/og-image.png"],
     creator: "@reddireach",
   },
