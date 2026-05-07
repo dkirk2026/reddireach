@@ -35,6 +35,7 @@ type Post = {
   excerpt?: string
   mainImage?: any
   publishedAt?: string
+  _updatedAt?: string
   category?: string
 }
 
@@ -141,9 +142,9 @@ export default async function BlogPage({
                         {post.excerpt}
                       </p>
                     )}
-                    {post.publishedAt && (
+                    {(post.publishedAt || post._updatedAt) && (
                       <p className="mt-4 text-xs text-gray-400">
-                        {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                        {new Date(post.publishedAt || post._updatedAt!).toLocaleDateString('en-US', {
                           year: 'numeric',
                           month: 'long',
                           day: 'numeric',

@@ -21,7 +21,8 @@ export const paginatedPostsQuery = groq`
     slug,
     excerpt,
     mainImage,
-    "publishedAt": coalesce(publishedAt, _updatedAt),
+    publishedAt,
+    _updatedAt,
     "category": categories[0]->title
   }
 `
