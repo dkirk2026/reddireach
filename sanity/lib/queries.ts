@@ -15,7 +15,7 @@ export const postsQuery = groq`
 
 // Get paginated posts
 export const paginatedPostsQuery = groq`
-  *[_type == "post" && defined(slug.current)] | order(publishedAt desc) [$start...$end] {
+  *[_type == "post" && defined(slug.current)] | order(coalesce(publishedAt, _updatedAt) desc) [$start...$end] {
     _id,
     title,
     slug,
