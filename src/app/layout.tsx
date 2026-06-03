@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     description: "We get your brand mentioned on Reddit so ChatGPT, Perplexity, and Google AI recommend you to customers. Trusted by 500+ brands.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "ReddiReach - Reddit Marketing & AI Search Optimization",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Reddit Marketing Agency That Gets You Recommended by AI | ReddiReach",
     description: "We get your brand mentioned on Reddit so ChatGPT, Perplexity, and Google AI recommend you to customers. Trusted by 500+ brands.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
     creator: "@reddireach",
   },
   robots: {
@@ -80,6 +80,7 @@ export default function RootLayout({
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "sales",
+      url: "https://calendly.com/kirkco/chat",
       availableLanguage: ["English"],
     },
     serviceArea: {

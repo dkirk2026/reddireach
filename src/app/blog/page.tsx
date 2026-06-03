@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     description: 'Insights on Reddit marketing, AI search optimization, and GEO strategies for brands, startups and small businesses.',
     type: 'website',
     url: 'https://reddireach.com/blog',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'ReddiReach Blog - Reddit Marketing & AI Search Optimization' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'ReddiReach Blog - Reddit Marketing & AI Search Optimization' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Reddit Marketing & AI Search Blog | ReddiReach',
     description: 'Insights on Reddit marketing, AI search optimization, and GEO strategies for brands, startups and small businesses.',
-    images: ['/og-image.png'],
+    images: ['/og-image.jpg'],
   },
 }
 

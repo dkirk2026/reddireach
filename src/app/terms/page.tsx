@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     description: "ReddiReach Terms of Service - The terms and conditions governing your use of our services.",
     type: "website",
     url: "https://reddireach.com/terms",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "ReddiReach - Terms of Service" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "ReddiReach - Terms of Service" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Terms of Service | ReddiReach",
     description: "ReddiReach Terms of Service - The terms and conditions governing your use of our services.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 

@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     description: "ReddiReach Cookie Policy - Learn about how we use cookies and similar technologies.",
     type: "website",
     url: "https://reddireach.com/cookies",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "ReddiReach - Cookie Policy" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "ReddiReach - Cookie Policy" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Cookie Policy | ReddiReach",
     description: "ReddiReach Cookie Policy - Learn about how we use cookies and similar technologies.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 

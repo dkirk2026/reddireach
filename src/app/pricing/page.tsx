@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "https://reddireach.com/pricing",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "ReddiReach Pricing - Reddit Marketing & GEO Services",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Pricing | ReddiReach - Reddit Marketing & GEO",
     description:
       "Transparent pricing for Reddit marketing and AI search optimization services for brands, startups, and small businesses.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -120,7 +120,6 @@ const faqs = [
 ];
 
 export default function PricingPage() {
-  // FAQ Schema for SEO
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -134,6 +133,52 @@ export default function PricingPage() {
     })),
   };
 
+  const offerSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "ReddiReach Service Plans",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        item: {
+          "@type": "Offer",
+          name: "Reddit Growth",
+          description: "Perfect for businesses wanting to scale with Reddit Marketing",
+          price: "1500",
+          priceCurrency: "USD",
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: "1500",
+            priceCurrency: "USD",
+            unitText: "MONTH",
+          },
+          url: "https://reddireach.com/pricing",
+          seller: { "@type": "Organization", name: "ReddiReach" },
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        item: {
+          "@type": "Offer",
+          name: "AI Search Optimization",
+          description: "Perfect for businesses that want to show up in AI search results",
+          price: "4000",
+          priceCurrency: "USD",
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: "4000",
+            priceCurrency: "USD",
+            unitText: "MONTH",
+          },
+          url: "https://reddireach.com/pricing",
+          seller: { "@type": "Organization", name: "ReddiReach" },
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <Navbar />
@@ -142,6 +187,10 @@ export default function PricingPage() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(offerSchema) }}
         />
 
         {/* Hero Section */}

@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     description: "ReddiReach Privacy Policy - Learn how we collect, use, and protect your personal information.",
     type: "website",
     url: "https://reddireach.com/privacy",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "ReddiReach - Privacy Policy" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "ReddiReach - Privacy Policy" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Privacy Policy | ReddiReach",
     description: "ReddiReach Privacy Policy - Learn how we collect, use, and protect your personal information.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
