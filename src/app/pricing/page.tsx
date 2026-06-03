@@ -4,18 +4,18 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Reddit Marketing Pricing — From $1,495/mo | ReddiReach",
+  title: "Reddit Marketing Pricing — From $1,500/mo | ReddiReach",
   description:
-    "Transparent pricing for Reddit marketing and AI search optimization services. Reddit Growth from $1,495/month. AI Search Optimization from $4,995/month. Get your brand recommended by ChatGPT, Claude, Perplexity, and Google AI.",
+    "Transparent pricing for Reddit marketing and AI search optimization services. Reddit Growth from $1,500/month. AI Search Optimization from $4,000/month. Get your brand recommended by ChatGPT, Claude, Perplexity, and Google AI.",
   keywords:
     "Reddit marketing pricing, GEO pricing, AI search optimization cost, Reddit advertising cost, generative engine optimization pricing",
   alternates: {
     canonical: "https://reddireach.com/pricing",
   },
   openGraph: {
-    title: "Reddit Marketing Pricing — From $1,495/mo | ReddiReach",
+    title: "Reddit Marketing Pricing — From $1,500/mo | ReddiReach",
     description:
-      "Transparent pricing for Reddit marketing and AI search optimization. Reddit Growth from $1,495/month. AI Search Optimization from $4,995/month.",
+      "Transparent pricing for Reddit marketing and AI search optimization. Reddit Growth from $1,500/month. AI Search Optimization from $4,000/month.",
     type: "website",
     url: "https://reddireach.com/pricing",
     images: [
@@ -39,32 +39,29 @@ export const metadata: Metadata = {
 const plans = [
   {
     name: "Reddit Growth",
-    price: "$1,495",
+    price: "$1,500",
     period: "/month",
     description: "Perfect for businesses wanting to scale with Reddit Marketing",
     features: [
-      "10 targeted subreddits",
-      "20 engagements per month",
-      "Basic reporting",
-      "Email support",
+      "20 targeted comments/month in r/[Niche] and adjacent subreddits",
+      "Thread monitoring to identify relevant conversations as they happen",
+      "Mention share tracking versus key competitors",
+      "Monthly report covering reach, engagement, and AI citation frequency",
     ],
     highlighted: false,
     cta: "Get Started",
   },
   {
     name: "AI Search Optimization",
-    price: "$4,995",
+    price: "$4,000",
     period: "/month",
     description: "Perfect for businesses that want to show up in AI search results",
     features: [
-      "20 targeted subreddits",
-      "30 engagements per month",
-      "Digital PR mentions",
-      "Content marketing",
-      "SEO site optimization",
-      "Advanced reporting",
-      "Email support",
-      "Monthly phone call",
+      "12 articles/month targeting high-intent queries",
+      "Technical SEO: Schema, Metadata, and Title optimisation across all pages",
+      "AI visibility tracked across ChatGPT, Gemini, Perplexity, Google AI Mode & Google AIO",
+      "Link Building",
+      "Weekly Strategy & Alignment Calls",
     ],
     highlighted: true,
     cta: "Start Growing",
