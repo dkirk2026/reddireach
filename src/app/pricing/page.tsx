@@ -4,18 +4,18 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Reddit Marketing Pricing — From $1,500/mo | ReddiReach",
+  title: "Reddit Marketing Pricing — From $1,600/mo | ReddiReach",
   description:
-    "Transparent pricing for Reddit marketing and AI search optimization services. Reddit Growth from $1,500/month. AI Search Optimization from $4,000/month. Get your brand recommended by ChatGPT, Claude, Perplexity, and Google AI.",
+    "Transparent pricing for Reddit marketing and AI search optimization services. Reddit Growth from $1,600/month. AI Search Optimization from $5,000/month. Get your brand recommended by ChatGPT, Claude, Perplexity, and Google AI.",
   keywords:
     "Reddit marketing pricing, GEO pricing, AI search optimization cost, Reddit advertising cost, generative engine optimization pricing",
   alternates: {
     canonical: "https://reddireach.com/pricing",
   },
   openGraph: {
-    title: "Reddit Marketing Pricing — From $1,500/mo | ReddiReach",
+    title: "Reddit Marketing Pricing — From $1,600/mo | ReddiReach",
     description:
-      "Transparent pricing for Reddit marketing and AI search optimization. Reddit Growth from $1,500/month. AI Search Optimization from $4,000/month.",
+      "Transparent pricing for Reddit marketing and AI search optimization. Reddit Growth from $1,600/month. AI Search Optimization from $5,000/month.",
     type: "website",
     url: "https://reddireach.com/pricing",
     images: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 const plans = [
   {
     name: "Reddit Growth",
-    price: "$1,500",
+    price: "$1,600",
     period: "/month",
     description: "Perfect for businesses wanting to scale with Reddit Marketing",
     features: [
@@ -53,7 +53,7 @@ const plans = [
   },
   {
     name: "AI Search Optimization",
-    price: "$4,000",
+    price: "$5,000",
     period: "/month",
     description: "Perfect for businesses that want to show up in AI search results",
     features: [
@@ -145,11 +145,11 @@ export default function PricingPage() {
           "@type": "Offer",
           name: "Reddit Growth",
           description: "Perfect for businesses wanting to scale with Reddit Marketing",
-          price: "1500",
+          price: "1600",
           priceCurrency: "USD",
           priceSpecification: {
             "@type": "UnitPriceSpecification",
-            price: "1500",
+            price: "1600",
             priceCurrency: "USD",
             unitText: "MONTH",
           },
@@ -164,11 +164,11 @@ export default function PricingPage() {
           "@type": "Offer",
           name: "AI Search Optimization",
           description: "Perfect for businesses that want to show up in AI search results",
-          price: "4000",
+          price: "5000",
           priceCurrency: "USD",
           priceSpecification: {
             "@type": "UnitPriceSpecification",
-            price: "4000",
+            price: "5000",
             priceCurrency: "USD",
             unitText: "MONTH",
           },
